@@ -1,0 +1,87 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TheOtherSide</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TheOtherSide.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/logo3.png" alt="Logo" width="80" height="100" class="d-inline-block align-text-top">
+                </a>
+
+                <!-- Botón hamburguesa responsive -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú y botones -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Menú principal -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Mujeres</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Hombres</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Niños</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Comida</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Otros</a></li>
+                    </ul>
+
+                    <!-- Botones de inicio de sesión / registro -->
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-outline-light me-2">Iniciar Sesión</a>
+                        <a href="#" class="btn btn-light">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+
+
+    <!-- CONTENIDO -->
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-custom mt-auto">
+        <div class="container text-center py-3">
+            <p class="mb-1">
+                &copy; 2025 - TheOtherSide -
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-decoration-none">Privacy</a>
+            </p>
+
+            <!-- Contactos -->
+            <p class="mb-1">
+                📞 <a href="tel:+528156773956" class="text-decoration-none">8156773956</a> |
+                📧 <a href="mailto:contacto@theotherside.com" class="text-decoration-none">contacto@theotherside.com</a>
+            </p>
+
+            <p class="mb-0">
+                📷 <a href="https://instagram.com/tuusuario" target="_blank" class="text-decoration-none">Instagram</a> |
+                📘 <a href="https://facebook.com/tuusuario" target="_blank" class="text-decoration-none">Facebook</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
