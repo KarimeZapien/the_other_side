@@ -59,6 +59,68 @@
         </div>
     </div>
 
+
+
+    <!-- lo de las imagenes pasando  -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Nuestros Productos Más Vendidos </h2>
+
+        <!-- Carrusel -->
+        <div id="productosimagenes" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#productosimagenes" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#productosimagenes" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#productosimagenes" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Contenido -->
+            <div class="carousel-inner">
+
+                <!-- Producto 1 -->
+                <div class="carousel-item active">
+                    <img src="~/img/productomujer1.png" class="d-block w-50 mx-auto" alt="Producto 1">
+                    <div class="carousel-caption d-none d-md-block texto-carrusel">
+                        <h5>$299</h5>
+                        <p>Elf Jelly Pop Glow Reviver Lip Oil</p>
+                        <a href="https://ejemplo.com/producto1" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="carousel-item">
+                    <img src="~/img/productomujer2.png" class="d-block w-50 mx-auto" alt="Producto 2">
+                    <div class="carousel-caption d-none d-md-block texto-carrusel">
+                        <h5>$599</h5>
+                        <p>Rhode Peptide Lip Treatment Strawberry Glaze </p>
+                        <a href="https://ejemplo.com/producto2" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="carousel-item">
+                    <img src="~/img/productomujer3.png" class="d-block w-50 mx-auto" alt="Producto 3">
+                    <div class="carousel-caption d-none d-md-block texto-carrusel">
+                        <h5>$1099</h5>
+                        <p>Bolsa Tommy Hilfiger Crossbody Color Azul</p>
+                        <a href="https://ejemplo.com/producto3" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botones de navegación, o sea las flecha rojas (el color y estilo pues en el css) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#productosimagenes" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productosimagenes" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

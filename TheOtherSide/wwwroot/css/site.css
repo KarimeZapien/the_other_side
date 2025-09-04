@@ -1,58 +1,62 @@
-html {
-  font-size: 14px;
+/* Reset general */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Ajuste de fuente para pantallas grandes */
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* El contenido se expande y empuja el footer */
+main {
+    flex: 1;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 100px;
+/* Botones al enfocar */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
+.form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 /* Fondo personalizado para la barra */
 .navbar-custom {
-    background-color: white !important; /* Fondo blanco */
-    border-bottom: 2px solid black; /* L�nea negra abajo */
-    background-image: none !important; /* Quita la imagen */
-    box-shadow: none; /* Sin sombra (opcional) */
+    background-color: white !important;
+    border-bottom: 2px solid black;
+    background-image: none !important;
+    box-shadow: none;
 }
 
-    /* Para que los enlaces sean m�s visibles */    
+    /* Links en la navbar */
     .navbar-custom .nav-link {
         font-weight: 500;
         color: black !important;
     }
 
         .navbar-custom .nav-link:hover {
-            color: #FFD700 !important; /* Dorado al pasar el mouse */
+            color: #FFD700 !important;
         }
 
+/* Estilo para cards de menú */
 .menu_imagen .card {
-    border: none; /* Quita cualquier borde */
-    box-shadow: none; /* Quita sombras si no quieres */
-    overflow: hidden; /* Esconde cualquier sobrante */
-    border-radius: 10px; /* Mantiene las esquinas redondeadas */
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .menu_imagen .card-img {
     height: 250px;
     width: 100%;
     object-fit: cover;
-    border: none; /* Sin bordes */
-    box-shadow: none; /* Sin sombra */
-    display: block; /* Elimina espacios extras */
+    border: none;
+    box-shadow: none;
+    display: block;
 }
 
 .menu_imagen .card-title {
@@ -65,36 +69,58 @@ body {
     transition: transform 0.3s;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
 
-
+/* Footer */
 .footer-custom {
-    background-color: #e3f2fd; /* Celeste muy bajito */
+    background-color: #e3f2fd;
     border-top: 1px solid #ccc;
-    margin-top: auto; /* Hace que el footer baje */
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
 }
 
     .footer-custom a {
-        color: #007bff; /* Azul suave para los links */
+        color: #007bff;
         transition: color 0.3s;
     }
 
         .footer-custom a:hover {
-            color: #0056b3; /* Azul m�s oscuro al pasar el mouse */
+            color: #0056b3;
         }
 
-
+/* Barra de búsqueda */
 .search-bar {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    border: 1px solid #333; /* Borde gris oscuro */
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #333;
 }
 
     .search-bar::placeholder {
-        color: #ccc; /* Texto gris claro del placeholder */
+        color: #ccc;
     }
 
+
+/*Para las imagenes que se mueven (carrusel con imágenes y flechas bien visibles)*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: red; /* Cambia a un color que contraste */
+    border-radius: 50%; /* Opcional: hacerlas redondas */
+    width: 80px; /* Tamaño */
+    height: 80px; /* Tamaño */
+}
+.texto-carrusel h5,
+.texto-carrusel p {
+    color: black; /* pone el texto en negro */
+}
+
+/* Cambiar color del botón de Comprar */
+.texto-carrusel .btn {
+    background-color: red; /* color de fondo rojo */
+    border-color: red; /* borde rojo */
+}
+
+    /* Opcional: al pasar el mouse */
+    .texto-carrusel .btn:hover {
+        background-color: darkred;
+        border-color: darkred;
+    }
