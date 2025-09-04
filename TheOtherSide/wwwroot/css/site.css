@@ -24,12 +24,12 @@ body {
 /* Fondo personalizado para la barra */
 .navbar-custom {
     background-color: white !important; /* Fondo blanco */
-    border-bottom: 2px solid black; /* Línea negra abajo */
+    border-bottom: 2px solid black; /* Lï¿½nea negra abajo */
     background-image: none !important; /* Quita la imagen */
     box-shadow: none; /* Sin sombra (opcional) */
 }
 
-    /* Para que los enlaces sean más visibles */    
+    /* Para que los enlaces sean mï¿½s visibles */    
     .navbar-custom .nav-link {
         font-weight: 500;
         color: black !important;
@@ -84,5 +84,16 @@ body {
     }
 
         .footer-custom a:hover {
-            color: #0056b3; /* Azul más oscuro al pasar el mouse */
+            color: #0056b3; /* Azul mï¿½s oscuro al pasar el mouse */
         }
+
+
+.search-bar {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #333; /* Borde gris oscuro */
+}
+
+    .search-bar::placeholder {
+        color: #ccc; /* Texto gris claro del placeholder */
+    }
