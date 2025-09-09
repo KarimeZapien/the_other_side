@@ -124,3 +124,30 @@ main {
         background-color: darkred;
         border-color: darkred;
     }
+
+/*Propiedades defs las tarjetas de label secciòn Comida*/
+
+.product-card .image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    transition: opacity 0.4s ease;
+    width: 100%;
+}
+
+.product-card .img-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.product-card:hover .img-front {
+    opacity: 0;
+}
+
+.product-card:hover .img-back {
+    opacity: 1;
+}
