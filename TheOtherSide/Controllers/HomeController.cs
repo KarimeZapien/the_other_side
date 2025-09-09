@@ -17,7 +17,25 @@ namespace TheOtherSide.Controllers
         {
             return View();
         }
+        public IActionResult Mujer()
+        {
+            return View();
+        }
 
+        public IActionResult Comida()
+        {
+            return View();
+        }
+
+        public IActionResult Hombres()
+        {
+            return View();
+        }
+
+        public IActionResult Ninos()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
