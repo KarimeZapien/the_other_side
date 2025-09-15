@@ -151,3 +151,9 @@ main {
 .product-card:hover .img-back {
     opacity: 1;
 }
+
+
+.pagina-producto {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
