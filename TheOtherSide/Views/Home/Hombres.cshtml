@@ -16,7 +16,7 @@
         <h2 class="text-center mb-4">@ViewData["Title"]</h2>
         <div class="row g-4">
 
-            <!-- Producto: Tenis -->
+            <!-- Producto: Tenis New Balance -->
             <div class="col-12 col-md-4">
                 <div class="card product-card">
                     <div class="image-container">
@@ -24,14 +24,18 @@
                         <img src="~/img/hombre/newbalance1.png" class="card-img-top img-back" alt="NB">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">New Balance 1000</h5>
+                        <!-- Aquí el nombre abre el modal -->
+                        <h5 class="card-title">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalNB" class="text-decoration-none">
+                                New Balance 1000
+                            </a>
+                        </h5>
                         <p class="card-text">$3599.00</p>
                         <a href="#" class="btn btn-outline-primary">Agregar al carrito</a>
                         <a href="#" class="btn btn-success">Comprar ahora</a>
                     </div>
                 </div>
             </div>
-
 
 
             <!-- Productos cartera -->
@@ -49,6 +53,8 @@
                     </div>
                 </div>
             </div>
+
+
 
             <!-- Productos gorra negra -->
 
@@ -174,9 +180,73 @@
         </div>
     </div>
 
+    <!-- Modal(La ventanita que se abre) para New Balance -->
+    <div class="modal fade" id="modalNB" tabindex="-1" aria-labelledby="modalNBLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <!-- modal-xl para hacerlo grande -->
+            <div class="modal-content p-3">
+                <div class="row g-4 align-items-center">
+                    <!-- Carrusel de imágenes (lado izquierdo) -->
+                    <div class="col-md-6">
+                        <div id="carouselNB" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/img/hombre/newbalance1.png" class="d-block w-100 carousel-modal-img" alt="NB 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/img/hombre/newbalance2.png" class="d-block w-100 carousel-modal-img" alt="NB 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/img/hombre/newbalanceext.png" class="d-block w-100 carousel-modal-img" alt="NB 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselNB" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselNB" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Detalles del producto (lado derecho) -->
+                    <div class="col-md-6">
+                        <h3 id="modalNBLabel" class="fw-bold">New Balance 1000</h3>
+                        <p class="text-muted">Tenis deportivo casual, lo ultimo en tendencias.</p>
+                        <p class="fs-3 fw-bold text-success">$3,599.00</p>
+
+                        <!-- Selección de tallas -->
+                        <div class="mb-3">
+                            <label for="tallaNB" class="form-label">Selecciona tu talla:</label>
+                            <select class="form-select" id="tallaNB">
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                            </select>
+                        </div>
+
+                        <!-- Botones, hay que ver si cambbiarlos que quedo algo raroo -->
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                            <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón cerrar -->
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 

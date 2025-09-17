@@ -151,3 +151,13 @@ main {
 .product-card:hover .img-back {
     opacity: 1;
 }
+
+
+/* el modal grande  */
+.carousel-modal-img {
+    width: 100%;
+    height: 400px; /* aqui ajustamos el tamaño que querramos */
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+}
