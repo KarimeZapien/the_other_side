@@ -19,7 +19,7 @@ namespace TheOtherSide.Controllers
         }
         public IActionResult Mujer()
         {
-            return View();
+            return View("mujer/Mujer");
         }
 
         public IActionResult Comida()
@@ -35,6 +35,12 @@ namespace TheOtherSide.Controllers
         public IActionResult Ninos()
         {
             return View();
+
+        }
+
+        public IActionResult Producto1Mujer()
+        {
+            return View("mujer/producto1mujer");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

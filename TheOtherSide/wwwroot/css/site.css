@@ -153,6 +153,12 @@ main {
 }
 
 
+.pagina-producto {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+
 /* el modal grande  */
 .carousel-modal-img {
     width: 100%;
