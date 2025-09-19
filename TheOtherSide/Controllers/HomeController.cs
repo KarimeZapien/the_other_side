@@ -19,7 +19,7 @@ namespace TheOtherSide.Controllers
         }
         public IActionResult Mujer()
         {
-            return View("mujer/Mujer");
+            return View();
         }
 
         public IActionResult Comida()
@@ -38,10 +38,6 @@ namespace TheOtherSide.Controllers
 
         }
 
-        public IActionResult Producto1Mujer()
-        {
-            return View("mujer/producto1mujer");
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
