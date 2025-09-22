@@ -32,7 +32,7 @@
                 </button>
 
                 <!-- Menú y botones -->
-                <div class="collapse navbar-collapse align-items-center" id="navbarContent">
+                <div class="collapse navbar-collapse" id="navbarContent">
 
                     <!-- Menú principal -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -109,10 +109,10 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
+    
     <!-- Script para cerrar el menú de tipo hamburguesa al hacer clic en un enlace -->
 
-    <script>
+    @* <script>
         document.addEventListener('DOMContentLoaded', function () {
             var navbarCollapse = document.getElementById('navbarContent');
             var navLinks = navbarCollapse.querySelectorAll('.nav-link');
@@ -126,7 +126,7 @@
                 });
             });
         });
-    </script>
+    </script> *@
 
 
 </body>

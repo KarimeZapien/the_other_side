@@ -24,12 +24,12 @@ main {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-/* Fondo personalizado para la barra */
+/* Navbar personalizada */
 .navbar-custom {
     background-color: white !important;
     border-bottom: 2px solid black;
-    background-image: none !important;
     box-shadow: none;
+    background-image: none !important;
 }
 
     /* Links en la navbar */
@@ -39,40 +39,13 @@ main {
     }
 
         .navbar-custom .nav-link:hover {
-            color: #FFD700 !important;
+            color: #FFD700 !important; /* dorado al hover */
         }
 
-
-/* Cambiar hamburguesa a X */
-.navbar-toggler {
-    border: none; /* opcional: sin borde */
+/* Ícono toggle */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
 }
-
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-        background-image: none; /* quitamos el ícono de hamburguesa */
-        position: relative;
-        width: 1.5em;
-        height: 1.5em;
-    }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 2px;
-            background-color: #000; /* cambia el color de la X */
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-            transform: rotate(45deg);
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-            transform: rotate(-45deg);
-        }
 
 /* Estilo para cards de menú */
 .menu_imagen .card {
