@@ -59,9 +59,13 @@
 
 
                     <!-- Botones de inicio de sesión / registro -->
+                    <!-- Botón Log In (literal del slide) -->
                     <div class="d-flex me-3">
-                        <a href="#" class="btn btn-outline-light me-2">Iniciar Sesión</a>
-                        <a href="#" class="btn btn-light">Registrarse</a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class=" btn  btn -outline-primary login- btn " asp-area="" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -107,24 +111,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    
-    <!-- Script para cerrar el menú de tipo hamburguesa al hacer clic en un enlace -->
-
-    @* <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbarCollapse = document.getElementById('navbarContent');
-            var navLinks = navbarCollapse.querySelectorAll('.nav-link');
-            var bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth < 992) { // Solo en pantallas pequeñas
-                        bsCollapse.hide();
-                    }
-                });
-            });
-        });
-    </script> *@
 
 
 </body>
