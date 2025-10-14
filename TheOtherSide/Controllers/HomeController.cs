@@ -32,7 +32,7 @@ namespace TheOtherSide.Controllers
             return View();
         }
 
-        public IActionResult Ninos()
+        public IActionResult Accesorios()
         {
             return View();
 

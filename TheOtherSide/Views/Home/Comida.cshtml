@@ -5,41 +5,397 @@
 <h2>@ViewData["Title"]</h2>
 <p>¡Tus antojos favoritos solo en The Other Side! 🍔🍕</p>
 
+<!-- MISMA FUENTE QUE MUJER -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+
 <div class="container my-5">
     <div class="row g-4">
 
-        <!-- Producto 1 -cheetos-->
-        <div class="col-12 col-md-4">
-            <div class="card product-card">
-                <div class="image-container">
-                    <img src="~/img/comida/comida1.png" class="card-img-top img-front" alt="Cheetos">
-                    <img src="~/img/comida/comidafondo1.png" class="card-img-top img-back" alt="Cheetos">
+        <!-- Card: Cheetos -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#CheetosVentana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/comida/comida1.png" class="img-front" alt="Cheetos frente">
+                        <img src="~/img/comida/comidafondo1.png" class="img-back" alt="Cheetos fondo">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cheetos Flaming Hot</h5>
+                        <p class="card-text">$179.00</p>
+                    </div>
                 </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Cheetos Crunchy Limon 300 gr</h5>
-                    <p class="card-text">$129.00</p>
-                    <a href="#" class="btn btn-outline-primary">Agregar al carrito</a>
-                    <a href="#" class="btn btn-success">Comprar ahora</a>
-                </div>
-            </div>
+            </a>
         </div>
 
-        <!-- Producto 2 -->
-        <div class="col-12 col-md-4">
-            <div class="card product-card">
-                <div class="image-container">
-                    <img src="~/img/comida/comida1.png" class="card-img-top img-front" alt="Cheetos">
-                    <img src="~/img/comida/comidafondo1.png" class="card-img-top img-back" alt="Cheetos">
+        <!-- Card: Cartera Guess -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Guess_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/carteraguess1.png" class="img-front" alt="Cartera Guess frente">
+                        <img src="~/img/hombre/carteraguess2.png" class="img-back" alt="Cartera Guess atrás">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cartera Guess</h5>
+                        <p class="card-text">$599.00</p>
+                    </div>
                 </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">CAMBIAR</h5>
-                    <p class="card-text">$129.00</p>
-                    <a href="#" class="btn btn-outline-primary">Agregar al carrito</a>
-                    <a href="#" class="btn btn-success">Comprar ahora</a>
+            </a>
+        </div>
+
+        <!-- Card: Gorra New Era NY (negra) -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#GorraNY_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/11.png" class="img-front" alt="Gorra New Era NY frente">
+                        <img src="~/img/hombre/gorra negra 2.png" class="img-back" alt="Gorra New Era NY atrás">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gorra New Era NY</h5>
+                        <p class="card-text">$999.00</p>
+                    </div>
                 </div>
-            </div>
+            </a>
+        </div>
+
+        <!-- Card: Gorra Carhartt de Lona (azul) -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#GorraCarhartt_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/16.png" class="img-front" alt="Gorra Carhartt lona frente">
+                        <img src="~/img/hombre/gorra azul 2.png" class="img-back" alt="Gorra Carhartt lona atrás">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gorra Carhartt de Lona</h5>
+                        <p class="card-text">$750.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card: Reloj Lacoste -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Lacoste_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/18.png" class="img-front" alt="Reloj Lacoste frente">
+                        <img src="~/img/hombre/reloj negro lacoste.png" class="img-back" alt="Reloj Lacoste detalle">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Reloj Lacoste</h5>
+                        <p class="card-text">$2,749.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card: Perfume Acqua Di Gio -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#AcquaDiGio_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/19.png" class="img-front" alt="Perfume Acqua Di Gio frente">
+                        <img src="~/img/hombre/Perfume AquaDiGio 2.png" class="img-back" alt="Perfume Acqua Di Gio detalle">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Perfume Acqua Di Gio</h5>
+                        <p class="card-text">$1,999.00</p>
+                    </div>
+                </div>
+            </a>
         </div>
 
     </div>
 </div>
+
+<!-- ============== MODALES (Botones aquí, igual que Mujer) ============== -->
+<!-- Modal: Cheetos -->
+<div class="modal fade" id="CheetosVentana" tabindex="-1" aria-labelledby="CheetosLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <!-- Carrusel -->
+                <div class="col-md-6">
+                    <div id="carouselCheetos_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/comida/comida1.png" class="d-block w-100 carousel-modal-img" alt="NB 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/comida/comidafondo1.png" class="d-block w-100 carousel-modal-img" alt="NB 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCheetos_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCheetos_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Detalles -->
+                <div class="col-md-6">
+                    <h3 id="CheetosLabel" class="fw-bold">Cheetos Flaming Hot</h3>
+                    <p class="text-muted">El perfecto snack ácido y picante</p>
+                    <p class="fs-3 fw-bold text-success">$189.00</p>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Cartera Guess -->
+<div class="modal fade" id="Guess_Ventana" tabindex="-1" aria-labelledby="GuessLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselGuess_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/hombre/carteraguess1.png" class="d-block w-100 carousel-modal-img" alt="Guess 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/carteraguess2.png" class="d-block w-100 carousel-modal-img" alt="Guess 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGuess_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGuess_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="GuessLabel" class="fw-bold">Cartera Guess</h3>
+                    <p class="text-muted">Cartera con múltiples compartimentos.</p>
+                    <p class="fs-3 fw-bold text-success">$599.00</p>
+
+                    <div class="mb-3">
+                        <label for="colorGuess" class="form-label">Color:</label>
+                        <select class="form-select" id="colorGuess">
+                            <option>Negro</option>
+                            <option>Café</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Gorra New Era NY -->
+<div class="modal fade" id="GorraNY_Ventana" tabindex="-1" aria-labelledby="GorraNYLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselGorraNY_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/hombre/11.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/gorra negra 2.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraNY_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGorraNY_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="GorraNYLabel" class="fw-bold">Gorra New Era NY</h3>
+                    <p class="text-muted">Ajuste clásico con visera curva.</p>
+                    <p class="fs-3 fw-bold text-success">$999.00</p>
+
+                    <div class="mb-3">
+                        <label for="tallaGorraNY" class="form-label">Talla:</label>
+                        <select class="form-select" id="tallaGorraNY">
+                            <option>Unitalla</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Gorra Carhartt -->
+<div class="modal fade" id="GorraCarhartt_Ventana" tabindex="-1" aria-labelledby="GorraCarharttLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselGorraCarhartt_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/hombre/16.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/gorra azul 2.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="GorraCarharttLabel" class="fw-bold">Gorra Carhartt de Lona</h3>
+                    <p class="text-muted">Durabilidad y comodidad para el día a día.</p>
+                    <p class="fs-3 fw-bold text-success">$750.00</p>
+
+                    <div class="mb-3">
+                        <label for="tallaCarhartt" class="form-label">Ajuste:</label>
+                        <select class="form-select" id="tallaCarhartt">
+                            <option>Unitalla</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Lacoste -->
+<div class="modal fade" id="Lacoste_Ventana" tabindex="-1" aria-labelledby="LacosteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselLacoste_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/hombre/18.png" class="d-block w-100 carousel-modal-img" alt="Lacoste 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/reloj negro lacoste.png" class="d-block w-100 carousel-modal-img" alt="Lacoste 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLacoste_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLacoste_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="LacosteLabel" class="fw-bold">Reloj Lacoste</h3>
+                    <p class="text-muted">Diseño minimalista con correa de silicón.</p>
+                    <p class="fs-3 fw-bold text-success">$2,749.00</p>
+
+                    <div class="mb-3">
+                        <label for="correaLacoste" class="form-label">Tamaño de muñeca:</label>
+                        <select class="form-select" id="correaLacoste">
+                            <option>16–18 cm</option>
+                            <option>18–20 cm</option>
+                            <option>20–22 cm</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Acqua Di Gio -->
+<div class="modal fade" id="AcquaDiGio_Ventana" tabindex="-1" aria-labelledby="AcquaDiGioLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselAcquaDiGio_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/hombre/19.png" class="d-block w-100 carousel-modal-img" alt="ADG 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/Perfume AquaDiGio 2.png" class="d-block w-100 carousel-modal-img" alt="ADG 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAcquaDiGio_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselAcquaDiGio_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="AcquaDiGioLabel" class="fw-bold">Perfume Acqua Di Gio</h3>
+                    <p class="text-muted">Fragancia clásica y fresca.</p>
+                    <p class="fs-3 fw-bold text-success">$1,999.00</p>
+
+                    <div class="mb-3">
+                        <label for="presentacionADG" class="form-label">Presentación:</label>
+                        <select class="form-select" id="presentacionADG">
+                            <option>50 ml</option>
+                            <option>100 ml</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
+                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
