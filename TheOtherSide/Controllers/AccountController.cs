@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace TheOtherSide.Controllers
 {
@@ -14,21 +15,21 @@ namespace TheOtherSide.Controllers
         }
 
         private string UsersPath =>
-            Path.Combine(Directory.GetCurrentDirectory(), "AppData", "users.json");
+            Path.Combine(Directory.GetCurrentDirectory(), "AppData", "users.json"); // Ruta al archivo JSON donde tengo los usuarios
 
-        private List<User> LoadUsers()
+        private List<User> LoadUsers() //carga los usuarios desde el archivo json
         {
-            if (!System.IO.File.Exists(UsersPath))
+            if (!System.IO.File.Exists(UsersPath)) //verifica si el archivo json existe
                 return new List<User>();
             var json = System.IO.File.ReadAllText(UsersPath);
-            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>(); //si no hay usuarios, me da una lista vacía
         }
 
-        private void SaveUsers(List<User> users)
+        private void SaveUsers(List<User> users) //guarda los usuarios en el archivo json
         {
             var dir = Path.GetDirectoryName(UsersPath)!;
-            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-            var json = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
+            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir); 
+            var json = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true }); 
             System.IO.File.WriteAllText(UsersPath, json);
         }
 
@@ -42,7 +43,11 @@ namespace TheOtherSide.Controllers
             var users = LoadUsers();
             var user = users.Find(u => u.Username == username && u.Password == password);
             if (user != null)
+            {
+                // guardar la sesión del usuario
+                HttpContext.Session.SetString("Username", username);
                 return RedirectToAction("Index", "Home");
+            }
 
             ViewBag.ErrorMessage = "Usuario o contraseña inválidos.";
             return View();
@@ -77,7 +82,14 @@ namespace TheOtherSide.Controllers
             SaveUsers(users);
 
             ViewBag.SuccessMessage = "Se creó el usuario. Puede iniciar sesión.";
-            return View(); // o RedirectToAction("Login") si prefieres
+            return View(); 
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("Username"); 
+            return RedirectToAction("Index", "Home");
         }
     }
 }
