@@ -4,24 +4,24 @@
 }
 @if (items.Count == 0)
 {
-    <p>No games in cart.</p>
+    <p>Sin artículos en el carrito.</p>
 }
 else
 {
     <table class="table">
         <thead>
-            <tr><th>Game</th><th>Price</th><th></th></tr>
+            <tr><th>Articulo</th><th>Precio</th><th></th></tr>
         </thead>
         <tbody>
-            @foreach (var game in items)
+            @foreach (var articulo in items)
             {
                 <tr>
-                    <td>@game.Name</td>
-                    <td>$@game.Price</td>
+                    <td>@articulo.Name</td>
+                    <td>$@articulo.Price</td>
                     <td class="text-end">
                         <form asp-controller="Store" asp-action="RemoveFromCart" method="post" style="display:inline;">
-                            <input type="hidden" name="id" value="@game.Id" />
-                            <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                            <input type="hidden" name="id" value="@articulo.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
                         </form>
                     </td>
                 </tr>

@@ -33,7 +33,7 @@ namespace TheOtherSide.Controllers
             System.IO.File.WriteAllText(UsersPath, json);
         }
 
-        // ===== Login (del slide) =====
+        // ===== Login =====
         [HttpGet]
         public IActionResult Login() => View();
 

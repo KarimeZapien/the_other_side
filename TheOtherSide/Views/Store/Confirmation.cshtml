@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Confirmación de compra";
     var items = Model?.Cart ?? new List<TheOtherSide.Models.CartItem>();
-    // Si quieres mostrar cantidades sin cambiar el modelo, agrupamos por Id/Name:
     var grupos = items
         .GroupBy(x => new { x.Id, x.Name, x.Price })
         .Select(g => new { g.Key.Id, g.Key.Name, g.Key.Price, Qty = g.Count(), Subtotal = g.Sum(x => x.Price) })
@@ -10,7 +9,7 @@
     var total = grupos.Sum(x => x.Subtotal);
 }
 
-<h2 class="mb-3">Confirmación</h2>
+<h2 class="mb-3">Confirmación de compra</h2>
 
 @if (TempData["SuccessMessage"] != null)
 {
@@ -26,7 +25,7 @@ else
     <table class="table align-middle">
         <thead>
             <tr>
-                <th>ID</th>
+
                 <th>Producto</th>
                 <th class="text-center">Cantidad</th>
                 <th class="text-end">Precio</th>
@@ -37,7 +36,7 @@ else
             @foreach (var it in grupos)
             {
                 <tr>
-                    <td>@it.Id</td>
+
                     <td>@it.Name</td>
                     <td class="text-center">@it.Qty</td>
                     <td class="text-end">$@it.Price</td>

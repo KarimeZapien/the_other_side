@@ -4,7 +4,6 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
 using TheOtherSide.Models;
-
 using Microsoft.AspNetCore.Http;
 
 namespace TheOtherSide.Controllers
@@ -22,8 +21,6 @@ namespace TheOtherSide.Controllers
             new CartItem { Id = 2006, Name = "Perfume Acqua Di Gio",   Price = 1999.00m },
         };
 
-        private string SaleFilePath =>
-            Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); //aqui se guarda la venta
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
         private string SaleSummaryFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); // <-- resumen
 
@@ -51,15 +48,6 @@ namespace TheOtherSide.Controllers
         }
 
         // ----- SALE SUMMARY (Username, Total, Confirmed) -----
-        private SaleSummary LoadSaleSummary()
-        {
-            if (!System.IO.File.Exists(SaleSummaryFilePath))
-                return new SaleSummary { Username = GetCurrentUsername(), Total = 0m, Confirmed = false };
-
-            var json = System.IO.File.ReadAllText(SaleSummaryFilePath);
-            return JsonSerializer.Deserialize<SaleSummary>(json)
-                   ?? new SaleSummary { Username = GetCurrentUsername(), Total = 0m, Confirmed = false };
-        }
         private void SaveSaleSummary(SaleSummary summary)
         {
             summary.Username = GetCurrentUsername(); // asegura el usuario actual
