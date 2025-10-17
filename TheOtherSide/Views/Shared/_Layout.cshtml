@@ -14,12 +14,14 @@
 
 
 <body>
-    <!-- NAVBAR -->
     @using Microsoft.AspNetCore.Http
     @inject IHttpContextAccessor HttpContextAccessor
     @{
         var currentUser = HttpContextAccessor.HttpContext?.Session.GetString("Username");
+        //var cartCount = HttpContextAccessor.HttpContext?.Session.GetInt32("CartCount") ?? 0;
     }
+
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <div class="container-fluid">
@@ -29,67 +31,54 @@
                     <img src="~/img/nuevo_logo.png" alt="Logo" width="200" height="100" class="d-inline-block align-middle">
                 </a>
 
-                <!-- Botón hamburguesa responsive -->
+                <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                         aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menú y botones -->
+                <!-- Menú + acciones -->
                 <div class="collapse navbar-collapse" id="navbarContent">
-
                     <!-- Menú principal -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Mujer">Mujeres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Hombres">Hombres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Accesorios">Accesorios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Comida">Comida</a>
-                        </li>
-
-                
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Mujer">Mujeres</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Hombres">Hombres</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Accesorios">Accesorios</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Comida">Comida</a></li>
                     </ul>
 
-@*                     <!-- Barra de búsqueda -->
-                    <form class="d-flex me-3 mb-0" role="search" style="margin-bottom:0;">
-                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
- *@
-
-                    <!-- Botones de inicio de sesión / registro -->
-                    <!-- Zona de usuario -->
-                    <div class="d-flex me-3 align-items-center">
+                    <!-- Usuario + Carrito -->
+                    <div class="d-flex align-items-center ms-auto gap-2">
                         @if (!string.IsNullOrEmpty(currentUser))
                         {
-                            <span class="me-3 text-black">Hola, @currentUser!</span>
+                            <span class="me-2 text-black">Hola, @currentUser!</span>
                             <a class="btn btn-outline-dark" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
-
                         }
                         else
                         {
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class=" btn   btn -outline-primary login- btn " asp-area="" asp-controller="Account" asp-action="Login">Iniciar sesión</a>
+                                    <!-- (dejé tus clases "raritas" si quieres mantener literal del slide, pero puedes simplificar a 'btn btn-outline-primary') -->
+                                    <a class=" btn   btn -outline-primary login- btn " asp-controller="Account" asp-action="Login">Iniciar sesión</a>
                                 </li>
                                 <li class="nav-item ms-2">
-                                    <a class=" btn   btn -outline-primary login- btn " asp-area="" asp-controller="Account" asp-action="Register">Registrarte</a>
+                                    <a class=" btn   btn -outline-primary login- btn " asp-controller="Account" asp-action="Register">Registrarte</a>
                                 </li>
                             </ul>
                         }
-                    </div>
 
-                    
+                        <!-- Botón Carrito -->
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">
+                            Carrito
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
+    
+
 
     <!-- CONTENIDO -->
     <div class="container mt-4">
@@ -130,6 +119,20 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @await Html.PartialAsync("_CartOffcanvas")
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var canvas = document.getElementById('cartCanvas');
+          if (!canvas) return;
+          canvas.addEventListener('show.bs.offcanvas', function () {
+            fetch('@Url.Action("CartPanel", "Store")', { cache: 'no-store' })
+              .then(r => r.text())
+              .then(html => { document.getElementById('cartBody').innerHTML = html; })
+              .catch(() => { document.getElementById('cartBody').innerHTML = '<div class="text-danger">Error al cargar.</div>'; });
+          });
+        });
+    </script>
+
 
 
 </body>

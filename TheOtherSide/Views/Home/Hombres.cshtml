@@ -152,10 +152,15 @@
                         </select>
                     </div>
 
-                    <div class="d-flex gap-2">
+                    @* <div class="d-flex gap-2">
                         <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
                         <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+                    </div> *@
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2001" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -193,18 +198,12 @@
                     <p class="text-muted">Cartera con múltiples compartimentos.</p>
                     <p class="fs-3 fw-bold text-success">$599.00</p>
 
-                    <div class="mb-3">
-                        <label for="colorGuess" class="form-label">Color:</label>
-                        <select class="form-select" id="colorGuess">
-                            <option>Negro</option>
-                            <option>Café</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2002" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -242,17 +241,12 @@
                     <p class="text-muted">Ajuste clásico con visera curva.</p>
                     <p class="fs-3 fw-bold text-success">$999.00</p>
 
-                    <div class="mb-3">
-                        <label for="tallaGorraNY" class="form-label">Talla:</label>
-                        <select class="form-select" id="tallaGorraNY">
-                            <option>Unitalla</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2003" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -290,17 +284,11 @@
                     <p class="text-muted">Durabilidad y comodidad para el día a día.</p>
                     <p class="fs-3 fw-bold text-success">$750.00</p>
 
-                    <div class="mb-3">
-                        <label for="tallaCarhartt" class="form-label">Ajuste:</label>
-                        <select class="form-select" id="tallaCarhartt">
-                            <option>Unitalla</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2004" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -338,19 +326,12 @@
                     <p class="text-muted">Diseño minimalista con correa de silicón.</p>
                     <p class="fs-3 fw-bold text-success">$2,749.00</p>
 
-                    <div class="mb-3">
-                        <label for="correaLacoste" class="form-label">Tamaño de muñeca:</label>
-                        <select class="form-select" id="correaLacoste">
-                            <option>16–18 cm</option>
-                            <option>18–20 cm</option>
-                            <option>20–22 cm</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2005" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -384,22 +365,16 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3 id="AcquaDiGioLabel" class="fw-bold">Perfume Acqua Di Gio</h3>
+                    <h3 id="AcquaDiGioLabel" class="fw-bold">Perfume Acqua Di Gio 100 mL</h3>
                     <p class="text-muted">Fragancia clásica y fresca.</p>
                     <p class="fs-3 fw-bold text-success">$1,999.00</p>
 
-                    <div class="mb-3">
-                        <label for="presentacionADG" class="form-label">Presentación:</label>
-                        <select class="form-select" id="presentacionADG">
-                            <option>50 ml</option>
-                            <option>100 ml</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="2006" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+
                 </div>
             </div>
             <div class="modal-footer border-0">

@@ -1,0 +1,37 @@
+﻿@model TheOtherSide.Models.Sale
+@{
+    var items = Model?.Cart ?? new List<TheOtherSide.Models.CartItem>();
+}
+@if (items.Count == 0)
+{
+    <p>No games in cart.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr><th>Game</th><th>Price</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var game in items)
+            {
+                <tr>
+                    <td>@game.Name</td>
+                    <td>$@game.Price</td>
+                    <td class="text-end">
+                        <form asp-controller="Store" asp-action="RemoveFromCart" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@game.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="Store" asp-action="Confirmation" class="btn btn-primary w-100">
+        Confirmar pedido
+    </a>
+
+}
+
