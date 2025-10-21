@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 
 <div class="container my-5">
+    <div class="row g-4">
          <div class="col-12 col-md-4 mb-4">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Rhode_Ventana" class="text-decoration-none">
                  <div class="card product-card">
@@ -82,8 +83,7 @@
                 <div class="card product-card">
                     <div class="image-container">
                         <img src="~/img/mujer/producto9rem.png" class="img-front" alt="Imagen_Rem">
-                        <img src="~/img/mujer/rem2.png" class="img-back" alt="Imagen_Rem2
-">
+                        <img src="~/img/mujer/rem2.png" class="img-back" alt="Imagen_Rem2">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Starlet Lustrous Liquid Eyeshadow</h5>
@@ -92,10 +92,8 @@
                 </div>
             </a>
         </div>
-
-
-
     </div>
+
 </div>
 
 
@@ -150,16 +148,16 @@
                         <li><strong>Tono mostrado:</strong> Sin color (Clear)</li>
                     </ul>
 
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1001" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -216,16 +214,16 @@
                         <li><strong>Uso recomendado:</strong> Diario, playa o viajes cortos</li>
                     </ul>
 
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1002" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -281,16 +279,25 @@
                         <li><strong>Uso recomendado:</strong> Casual, diario y capas de otoño/invierno</li>
                     </ul>
 
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
+                    <div class="mb-3">
+                        <label for="tallaEcru" class="form-label">Selecciona tu talla:</label>
+                        <select class="form-select" id="tallaEcru">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
                     </div>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1003" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -330,7 +337,7 @@
 
                 <!-- Detalles del producto (lado derecho) -->
                 <div class="col-md-6">
-                    <h3 id="modalCloudLabel" class="fw-bold">Bolso de hombro Iconic de piel</h3>
+                    <h3 id="modalCloudLabel" class="fw-bold">Perfume Cloud 100 mL</h3>
                     <p class="text-muted">Un aroma dulce y envolvente que combina notas de lavanda, pera y crema de coco, dejando una fragancia ligera y duradera que acompaña todo el día.</p>
                     <p class="fs-3 fw-bold text-success">$1,938.00 MXN</p>
                     <ul class="list-unstyled">
@@ -342,16 +349,16 @@
                     </ul>
 
 
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1004" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -404,16 +411,16 @@
 
 
 
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1005" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -467,18 +474,16 @@
                         <li><strong>Tono mostrado:</strong> Starlet</li>
                     </ul>
 
-
-
-                    <!-- Botones -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Agregar al carrito</a>
-                        <a href="#" class="btn btn-outline-light flex-fill custom-btn">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1006" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botón cerrar -->
-            <button type="button" class="btn-close btn-close-custom position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>

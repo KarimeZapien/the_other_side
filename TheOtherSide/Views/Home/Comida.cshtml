@@ -43,66 +43,65 @@
             </a>
         </div>
 
-        //falta actualizar
-        <!-- Card: Gorra New Era NY (negra) -->
+        <!-- Card: Chips ahoy ST -->
         <div class="col-12 col-md-4 mb-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#GorraNY_Ventana" class="text-decoration-none">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#chipsahoy_Ventana" class="text-decoration-none">
                 <div class="card product-card">
                     <div class="image-container">
-                        <img src="~/img/hombre/11.png" class="img-front" alt="Gorra New Era NY frente">
-                        <img src="~/img/hombre/gorra negra 2.png" class="img-back" alt="Gorra New Era NY atrás">
+                        <img src="~/img/comida/chipsahoy1.png" class="img-front" alt="CA Frente">
+                        <img src="~/img/comida/chipsahoy2.png" class="img-back" alt="CA Back">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Gorra New Era NY</h5>
-                        <p class="card-text">$999.00</p>
+                        <h5 class="card-title">Chips Ahoy Stranger Things Edition</h5>
+                        <p class="card-text">$210.00</p>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Card: Gorra Carhartt de Lona (azul) -->
+        <!-- Card: Lotus -->
         <div class="col-12 col-md-4 mb-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#GorraCarhartt_Ventana" class="text-decoration-none">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Lotus_Ventana" class="text-decoration-none">
                 <div class="card product-card">
                     <div class="image-container">
-                        <img src="~/img/hombre/16.png" class="img-front" alt="Gorra Carhartt lona frente">
-                        <img src="~/img/hombre/gorra azul 2.png" class="img-back" alt="Gorra Carhartt lona atrás">
+                        <img src="~/img/comida/lotus1.png" class="img-front" alt="Lotus frente">
+                        <img src="~/img/comida/lotus2.png" class="img-back" alt="Lotus atrás">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Gorra Carhartt de Lona</h5>
-                        <p class="card-text">$750.00</p>
+                        <h5 class="card-title">Crema de Lotus Biscoff</h5>
+                        <p class="card-text">$150.00</p>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Card: Reloj Lacoste -->
+        <!-- Card: Oreo double stuf -->
         <div class="col-12 col-md-4 mb-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#Lacoste_Ventana" class="text-decoration-none">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#oreo_Ventana" class="text-decoration-none">
                 <div class="card product-card">
                     <div class="image-container">
-                        <img src="~/img/hombre/18.png" class="img-front" alt="Reloj Lacoste frente">
-                        <img src="~/img/hombre/reloj negro lacoste.png" class="img-back" alt="Reloj Lacoste detalle">
+                        <img src="~/img/comida/oreo1.png" class="img-front" alt="Oreo frente">
+                        <img src="~/img/comida/oreo2.png" class="img-back" alt="Oreo detalle">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Reloj Lacoste</h5>
-                        <p class="card-text">$2,749.00</p>
+                        <h5 class="card-title">Oreo Double Stuf</h5>
+                        <p class="card-text">$205.00</p>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Card: Perfume Acqua Di Gio -->
+        <!-- Card: Sour Patch Watermelon -->
         <div class="col-12 col-md-4 mb-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#AcquaDiGio_Ventana" class="text-decoration-none">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#SP_Ventana" class="text-decoration-none">
                 <div class="card product-card">
                     <div class="image-container">
-                        <img src="~/img/hombre/19.png" class="img-front" alt="Perfume Acqua Di Gio frente">
-                        <img src="~/img/hombre/Perfume AquaDiGio 2.png" class="img-back" alt="Perfume Acqua Di Gio detalle">
+                        <img src="~/img/comida/sp1.png" class="img-front" alt="Sour Patch frente">
+                        <img src="~/img/comida/sp2.png" class="img-back" alt="Sour Patch detalle">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Perfume Acqua Di Gio</h5>
-                        <p class="card-text">$1,999.00</p>
+                        <h5 class="card-title">Sour Patch Watermelon</h5>
+                        <p class="card-text">$199.00</p>
                     </div>
                 </div>
             </a>
@@ -140,12 +139,12 @@
                 <div class="col-md-6">
                     <h3 id="CheetosLabel" class="fw-bold">Cheetos Flaming Hot</h3>
                     <p class="text-muted">El perfecto snack ácido y picante</p>
-                    <p class="fs-3 fw-bold text-success">$189.00</p>
+                    <p class="fs-3 fw-bold text-success">$179.00</p>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3003" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -183,10 +182,10 @@
                     <p class="text-muted">Tus chocolates favoritos con un giro spooky.</p>
                     <p class="fs-3 fw-bold text-success">$219.00</p>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3002" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -196,45 +195,80 @@
     </div>
 </div>
 
-<!-- Modal: Gorra New Era NY -->
-<div class="modal fade" id="GorraNY_Ventana" tabindex="-1" aria-labelledby="GorraNYLabel" aria-hidden="true">
+<!-- Modal: Chips ahoy ST -->
+<div class="modal fade" id="chipsAhoy_Ventana" tabindex="-1" aria-labelledby="ChipsLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <div id="carouselGorraNY_h" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselchipsahoy_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/img/hombre/11.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 1">
+                                <img src="~/img/comida/chipsahoy1.png" class="d-block w-100 carousel-modal-img" alt="Chips Ahoy">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/img/hombre/gorra negra 2.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 2">
+                                <img src="~/img/comida/chipsahoy2.png" class="d-block w-100 carousel-modal-img" alt="Chips Ahoy 2">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraNY_h" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselchipsahoy_h" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGorraNY_h" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselchipsahoy_h" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3 id="GorraNYLabel" class="fw-bold">Gorra New Era NY</h3>
-                    <p class="text-muted">Ajuste clásico con visera curva.</p>
-                    <p class="fs-3 fw-bold text-success">$999.00</p>
+                    <h3 id="ChipsLabel" class="fw-bold">Chips Ahoy Stranger Things Edition</h3>
+                    <p class="text-muted">Tus galletas favoritas en colaboración con la serie Stranger Things.</p>
+                    <p class="fs-3 fw-bold text-success">$210.00</p>
 
-                    <div class="mb-3">
-                        <label for="tallaGorraNY" class="form-label">Talla:</label>
-                        <select class="form-select" id="tallaGorraNY">
-                            <option>Unitalla</option>
-                        </select>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3001" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Lotus -->
+<div class="modal fade" id="Lotus_Ventana" tabindex="-1" aria-labelledby="LotusLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselLotus_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/comida/lotus1.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/comida/lotus2.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLotus_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLotus_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="GorraCarharttLabel" class="fw-bold">Crema de Lotus Biscoff</h3>
+                    <p class="text-muted">El mejor complemento para postres deliciosos.</p>
+                    <p class="fs-3 fw-bold text-success">$150.00</p>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3004" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -244,45 +278,38 @@
     </div>
 </div>
 
-<!-- Modal: Gorra Carhartt -->
-<div class="modal fade" id="GorraCarhartt_Ventana" tabindex="-1" aria-labelledby="GorraCarharttLabel" aria-hidden="true">
+<!-- Modal: Oreo -->
+<div class="modal fade" id="oreo_Ventana" tabindex="-1" aria-labelledby="OreoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <div id="carouselGorraCarhartt_h" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouseloreo_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/img/hombre/16.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 1">
+                                <img src="~/img/comida/oreo1.png" class="d-block w-100 carousel-modal-img" alt="Oreo 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/img/hombre/gorra azul 2.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 2">
+                                <img src="~/img/comida/oreo2.png" class="d-block w-100 carousel-modal-img" alt="Oreo 2">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouseloreo_h" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouseloreo_h" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3 id="GorraCarharttLabel" class="fw-bold">Gorra Carhartt de Lona</h3>
-                    <p class="text-muted">Durabilidad y comodidad para el día a día.</p>
-                    <p class="fs-3 fw-bold text-success">$750.00</p>
+                    <h3 id="OreoLabel" class="fw-bold">Oreo Double Stuf</h3>
+                    <p class="text-muted">El doble de relleno en tus galletas favoritas.</p>
+                    <p class="fs-3 fw-bold text-success">$205.00</p>
 
-                    <div class="mb-3">
-                        <label for="tallaCarhartt" class="form-label">Ajuste:</label>
-                        <select class="form-select" id="tallaCarhartt">
-                            <option>Unitalla</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3005" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer border-0">
@@ -292,96 +319,38 @@
     </div>
 </div>
 
-<!-- Modal: Lacoste -->
-<div class="modal fade" id="Lacoste_Ventana" tabindex="-1" aria-labelledby="LacosteLabel" aria-hidden="true">
+<!-- Modal: Sour Patch Watermelon -->
+<div class="modal fade" id="SP_Ventana" tabindex="-1" aria-labelledby="SPLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <div id="carouselLacoste_h" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSP_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/img/hombre/18.png" class="d-block w-100 carousel-modal-img" alt="Lacoste 1">
+                                <img src="~/img/comida/sp1.png" class="d-block w-100 carousel-modal-img" alt="SP 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/img/hombre/reloj negro lacoste.png" class="d-block w-100 carousel-modal-img" alt="Lacoste 2">
+                                <img src="~/img/comida/sp2.png" class="d-block w-100 carousel-modal-img" alt="SP 2">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLacoste_h" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSP_h" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLacoste_h" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSP_h" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3 id="LacosteLabel" class="fw-bold">Reloj Lacoste</h3>
-                    <p class="text-muted">Diseño minimalista con correa de silicón.</p>
-                    <p class="fs-3 fw-bold text-success">$2,749.00</p>
+                    <h3 id="AcquaDiGioLabel" class="fw-bold">Sour Patch Watermelon</h3>
+                    <p class="text-muted">Tus gomitas favoritas con un toque ácido y dulce en el tamaño para compartir.</p>
+                    <p class="fs-3 fw-bold text-success">$199.00</p>
 
-                    <div class="mb-3">
-                        <label for="correaLacoste" class="form-label">Tamaño de muñeca:</label>
-                        <select class="form-select" id="correaLacoste">
-                            <option>16–18 cm</option>
-                            <option>18–20 cm</option>
-                            <option>20–22 cm</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal: Acqua Di Gio -->
-<div class="modal fade" id="AcquaDiGio_Ventana" tabindex="-1" aria-labelledby="AcquaDiGioLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content p-3">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6">
-                    <div id="carouselAcquaDiGio_h" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="~/img/hombre/19.png" class="d-block w-100 carousel-modal-img" alt="ADG 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/img/hombre/Perfume AquaDiGio 2.png" class="d-block w-100 carousel-modal-img" alt="ADG 2">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAcquaDiGio_h" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselAcquaDiGio_h" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h3 id="AcquaDiGioLabel" class="fw-bold">Perfume Acqua Di Gio</h3>
-                    <p class="text-muted">Fragancia clásica y fresca.</p>
-                    <p class="fs-3 fw-bold text-success">$1,999.00</p>
-
-                    <div class="mb-3">
-                        <label for="presentacionADG" class="form-label">Presentación:</label>
-                        <select class="form-select" id="presentacionADG">
-                            <option>50 ml</option>
-                            <option>100 ml</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-primary flex-fill">Agregar al carrito</a>
-                        <a href="#" class="btn btn-success flex-fill">Comprar ahora</a>
-                    </div>
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="3006" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer border-0">
