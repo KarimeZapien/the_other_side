@@ -31,6 +31,12 @@ namespace TheOtherSide.Controllers
             new CartItem { Id = 3004, Name = "Lotus Biscoff",   Price = 150.00m },
             new CartItem { Id = 3005, Name = "Oreo Double Stuf",   Price = 205.00m },
             new CartItem { Id = 3006, Name = "Sour Patch Watermelon",   Price = 199.00m },
+            new CartItem { Id = 4001, Name = "Stanley 30 oz Lila",   Price = 879.00m },
+            new CartItem { Id = 4002, Name = "Owala 32 oz Deep Black",   Price = 749.00m },
+            new CartItem { Id = 4003, Name = "Coleman Hielera 60QT",   Price = 1299.00m },
+            new CartItem { Id = 4004, Name = "Shark MultiStyle",   Price = 6599.00m },
+            new CartItem { Id = 4005, Name = "Crayola SuperTips 50 pz",   Price = 219.00m },
+            new CartItem { Id = 4006, Name = "Hair, Skin & Nails Gummies",   Price = 239.00m },
         };
 
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
@@ -107,7 +113,6 @@ namespace TheOtherSide.Controllers
             var cart = LoadCart();
             var total = cart.Sum(x => x.Price);
 
-            // Guarda SOLO el resumen de venta en sale.json
             var summary = new SaleSummary
             {
                 Username = GetCurrentUsername(),

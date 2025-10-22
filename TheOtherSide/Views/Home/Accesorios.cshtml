@@ -1,7 +1,467 @@
 ﻿@{
     ViewData["Title"] = "Accesorios";
 }
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 
-<h2>@ViewData["Title"]</h2>
-<p>Página dedicada a Accesorios 👕👟</p>
+<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#stanley_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/stanley1.png" class="img-front" alt="stanley1">
+                        <img src="~/img/accesorios/stanley2.png" class="img-back" alt="stanley2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Stanley Quencher 30 oz</h5>
+                        <p class="card-text">$879.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#owala_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/owala1.png" class="img-front" alt="Owala1">
+                        <img src="~/img/accesorios/owala2.png" class="img-back" alt="Owala2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Owala 32 oz</h5>
+                        <p class="card-text">$749.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#cooler_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/cooler1.png" class="img-front" alt="cooler1">
+                        <img src="~/img/accesorios/cooler2.png" class="img-back" alt="cooler2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Coleman Hielera 60QT</h5>
+                        <p class="card-text">$1299.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Shark_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/shark1.png" class="img-front" alt="Shark1">
+                        <img src="~/img/accesorios/shark4.png" class="img-back" alt="Shark2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Shark FlexStyle 4en1</h5>
+                        <p class="card-text">$6599.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
 
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#crayola_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/crayola1.png" class="img-front" alt="Crayola1">
+                        <img src="~/img/accesorios/crayola2.png" class="img-back" alt="Crayola2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Crayola SuperTips</h5>
+                        <p class="card-text">$299.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#gomitas_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/accesorios/vitaminas1.png" class="img-front" alt="V1">
+                        <img src="~/img/accesorios/vitaminas2.png" class="img-back" alt="V2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Hair, Skin & Nails Gummies</h5>
+                        <p class="card-text">$239.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- MODALES-->
+
+<div class="modal fade" id="stanley_Ventana" tabindex="-1" aria-labelledby="modalStanleyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+
+                <!-- Carrusel de imágenes (lado izquierdo) -->
+                <div class="col-md-6">
+                    <div id="carouselStanley" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/stanley1.png" class="d-block w-100 carousel-modal-img" alt="Stanley 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/stanley2.png" class="d-block w-100 carousel-modal-img" alt="Stanley 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/stanley3.png" class="d-block w-100 carousel-modal-img" alt="Stanley 3">
+                            </div>
+                        </div>
+                        <!-- Botones de navegación -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselStanley" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselStanley" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detalles del producto (lado derecho) -->
+                <div class="col-md-6">
+                    <h3 id="modalStanleyLabel" class="fw-bold">Stanley Quencher</h3>
+                    <p class="text-muted">
+                        El vaso de tus sueños: Sea cual sea la forma en que fluya tu día, el vaso H2.0 FlowState te mantiene fresco, con menos recargas.
+                        El aislamiento al vacío de doble pared hará que las bebidas permanezcan frías, heladas o calientes durante horas
+                    </p>
+                    <p class="fs-3 fw-bold text-success">$879.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Stanley</li>
+                        <li><strong>Acabado:</strong> Mate</li>
+                        <li><strong>Capacidad:</strong> 40 oz</li>
+                        <li><strong>Color:</strong> Lila</li>
+                    </ul>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="4001" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="owala_Ventana" tabindex="-1" aria-labelledby="modalOwalaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-md-6">
+                    <div id="carouselOwala" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/owala1.png" class="d-block w-100 carousel-modal-img" alt="Owala 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/owala2.png" class="d-block w-100 carousel-modal-img" alt="Owala 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/owala3.png" class="d-block w-100 carousel-modal-img" alt="Owala 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/owala4.png" class="d-block w-100 carousel-modal-img" alt="Owala 4">
+                            </div>
+                        </div>
+                        <!-- Botones de navegación -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOwala" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselOwala" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 id="modalOwalaLabel" class="fw-bold">Owala 32 oz</h3>
+                    <p class="text-muted">
+                        Patentado FreeSip Spout con pajita incorporada que te permite sorber o beber.
+                    </p>
+                    <p class="fs-3 fw-bold text-success">$749.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Owala</li>
+                        <li><strong>Color:</strong> Deep Black</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                        <li><strong>Características:</strong> BPA-Free, Térmico</li>
+                    </ul>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="4002" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="cooler_Ventana" tabindex="-1" aria-labelledby="modalCoolerLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+
+                <!-- Carrusel de imágenes (lado izquierdo) -->
+                <div class="col-md-6">
+                    <div id="carouselCooler_h" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/cooler1.png" class="d-block w-100 carousel-modal-img" alt="Cooler 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/cooler2.png" class="d-block w-100 carousel-modal-img" alt="Cooler 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/cooler3.png" class="d-block w-100 carousel-modal-img" alt="Cooler 3">
+                            </div>
+                        </div>
+                        <!-- Botones de navegación -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCooler_h" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCooler_h" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detalles del producto (lado derecho) -->
+                <div class="col-md-6">
+                    <h3 id="modalCoolerLabel" class="fw-bold">Coleman Hielera 60QT</h3>
+                    <p class="text-muted">
+                        Aislamiento superior: cuenta con una tapa y un cuerpo completamente aislados con
+                        TempLock FX para retener hielo durante varios días, lo que garantiza que el contenido se mantenga 
+                        frío durante períodos prolongados.
+                    </p>
+                    <p class="fs-3 fw-bold text-success">$1,299.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Coleman</li>
+                        <li><strong>Color:</strong> Sea Blue</li>
+                        <li><strong>Material:</strong> Plástico térmico</li>
+                        <li><strong>Capacidad:</strong> Hasta 50 latas</li>
+                    </ul>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="4003" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Shark_Ventana" tabindex="-1" aria-labelledby="modalSharkLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-md-6">
+                    <div id="carouselShark" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/shark1.png" class="d-block w-100 carousel-modal-img" alt="s1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/shark2.png" class="d-block w-100 carousel-modal-img" alt="s2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/shark3.png" class="d-block w-100 carousel-modal-img" alt="s3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/shark4.png" class="d-block w-100 carousel-modal-img" alt="s4">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselShark" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselShark" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 id="modalSharkLabel" class="fw-bold">Shark FlexStyle 4en1</h3>
+                    <p class="text-muted">4 - en - 1 Diseño Multi - Transformación de la función: Convierta fácilmente el secador de pelo de gran alcance en un multi - styler por una simple rotación.
+                        Este diseño adaptable permite transiciones rápidas entre diferentes necesidades de estilo.</p>
+                    <p class="fs-3 fw-bold text-success">$6,599.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Shark</li>
+                        <li><strong>Color:</strong> Gold</li>
+                        <li><strong>Tipo de cabello:</strong> Rizado, seco, graso, liso, ondulado</li>
+                    </ul>
+
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="4004" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="crayola_Ventana" tabindex="-1" aria-labelledby="modalCrayolaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselCrayola" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/crayola1.png" class="d-block w-100 carousel-modal-img" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/crayola2.png" class="d-block w-100 carousel-modal-img" alt="2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/crayola3.png" class="d-block w-100 carousel-modal-img" alt="3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/crayola4.png" class="d-block w-100 carousel-modal-img" alt="4">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCrayola" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCrayola" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 id="modalCrayolaLabel" class="fw-bold">Crayola SuperTips</h3>
+                    <p class="text-muted">
+                        <ul>
+                            <li>
+                                COLORES CRAYOLA: Este conjunto de marcadores a granel cuenta con 50 colores diferentes para asegurarse de que
+                                siempre tenga la sombra que necesita. 
+                            </li>
+                            <li>
+                                Marcadores lavables: Los marcadores lavables Crayola son perfectos para niños o adultos 
+                                para usar en libros para colorear, hacer obras de arte originales o practicar letras a mano.
+                            </li>
+                        </ul>
+                    </p>
+                    <p class="fs-3 fw-bold text-success">$219.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Crayola</li>
+                        <li><strong>Contenido:</strong> 50 piezas</li>
+                        <li><strong>Color:</strong> Multicolor</li>
+                    </ul>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="4005" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="gomitas_Ventana" tabindex="-1" aria-labelledby="modalGomitasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-3">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div id="carouselGomitas" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/img/accesorios/vitaminas1.png" class="d-block w-100 carousel-modal-img" alt="1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/vitaminas2.png" class="d-block w-100 carousel-modal-img" alt="2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/vitaminas3.png" class="d-block w-100 carousel-modal-img" alt="3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/accesorios/vitaminas4.png" class="d-block w-100 carousel-modal-img" alt="4">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGomitas" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGomitas" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 id="modalRemLabel" class="fw-bold">Hair, Skin & Nails Gummies</h3>
+                    <p class="text-muted">
+                        Nature's Bounty Vitaminas para el cabello y las uñas con biotina,
+                        Multivitaminas para mujeres, Gomitas de fresa, 90 uds
+                        La mejor marca para el cabello, piel y uñas. 
+                        Este suplemento dietético en forma de gominola está formulado para 
+                        mejorar su rutina de belleza con los ingredientes más puros, garantizados.
+                    </p>
+                    <p class="fs-3 fw-bold text-success">$239.00 MXN</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Marca:</strong> Bounty's Nature</li>
+                        <li><strong>Vitaminas:</strong> Ricas en Vitaminas B y D</li>
+                    </ul>
+
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                        <input type="hidden" name="id" value="1006" />
+                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

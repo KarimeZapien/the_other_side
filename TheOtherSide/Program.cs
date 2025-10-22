@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http; // para Session en controladores/vistas
+using Microsoft.AspNetCore.Http; 
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,12 +15,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Para leer Session desde el _Layout.cshtml (HttpContextAccessor)
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-// ---------- Middleware ----------
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -32,10 +30,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Session debe ir después de UseRouting y antes de Authorization/Map
 app.UseSession();
 
-// (Opcional) si usas autenticación, primero: app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

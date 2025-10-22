@@ -18,7 +18,6 @@
     @inject IHttpContextAccessor HttpContextAccessor
     @{
         var currentUser = HttpContextAccessor.HttpContext?.Session.GetString("Username");
-        //var cartCount = HttpContextAccessor.HttpContext?.Session.GetInt32("CartCount") ?? 0;
     }
 
     <!-- NAVBAR -->
@@ -26,20 +25,16 @@
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <div class="container-fluid">
 
-                <!-- Logo -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/img/nuevo_logo.png" alt="Logo" width="200" height="100" class="d-inline-block align-middle">
                 </a>
 
-                <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                         aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menú + acciones -->
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <!-- Menú principal -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Mujer">Mujeres</a></li>
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Hombres">Hombres</a></li>
@@ -47,7 +42,6 @@
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Comida">Comida</a></li>
                     </ul>
 
-                    <!-- Usuario + Carrito -->
                     <div class="d-flex align-items-center ms-auto gap-2">
                         @if (!string.IsNullOrEmpty(currentUser))
                         {
@@ -58,7 +52,6 @@
                         {
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <!-- (dejé tus clases "raritas" si quieres mantener literal del slide, pero puedes simplificar a 'btn btn-outline-primary') -->
                                     <a class=" btn   btn -outline-primary login- btn " asp-controller="Account" asp-action="Login">Iniciar sesión</a>
                                 </li>
                                 <li class="nav-item ms-2">
@@ -67,7 +60,6 @@
                             </ul>
                         }
 
-                        <!-- Botón Carrito -->
                         <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">
                             Carrito
                         </button>
@@ -102,15 +94,6 @@
                 📧 <a href="mailto:contacto@theotherside.com" class="text-decoration-none">contacto@theotherside.com</a>
             </p>
 
-            <p class="mb-0">
-                <a href="https://www.instagram.com/onedirection/" target="_blank">
-                    <img src="~/img/logo insta.png" alt="Instagram One Direction" style="width:40px; height:40px;">
-                </a>
-                |
-                <a href="https://www.facebook.com/arianagrande/?locale=es_LA" target="_blank">
-                    <img src="~/img/logo facebook.png" alt="" style="width:40px; height:40px;">
-                </a>
-            </p>
         </div>
     </footer>
 
@@ -132,8 +115,5 @@
           });
         });
     </script>
-
-
-
 </body>
 </html>
