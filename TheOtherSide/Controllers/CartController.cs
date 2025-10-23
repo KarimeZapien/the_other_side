@@ -48,7 +48,7 @@ namespace TheOtherSide.Controllers
 
 
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
-        private string SaleSummaryFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); // <-- resumen
+        //private string SaleSummaryFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); // <-- resumen
 
 
         private string GetCurrentUsername()
@@ -197,6 +197,56 @@ namespace TheOtherSide.Controllers
             var fileName = $"MisPedidos_{user}_{DateTime.Now:yyyyMMdd_HHmm}.pdf";
             return File(bytes, "application/pdf", fileName);
         }
+        [HttpPost]
+        public IActionResult ProcessPayment(string cardNumber, string expiry, string cvv)
+        {
+            if (string.IsNullOrWhiteSpace(cardNumber) || string.IsNullOrWhiteSpace(expiry) || string.IsNullOrWhiteSpace(cvv))
+            {
+                TempData["SuccessMessage"] = "Por favor completa los datos de pago.";
+                return RedirectToAction("Payment");
+            }
+
+            var cart = LoadCart();
+            if (cart.Count == 0)
+            {
+                TempData["SuccessMessage"] = "Tu carrito está vacío.";
+                return RedirectToAction("Confirmation");
+            }
+
+            // Agrupar para obtener Qty/Subtotales (como ya vienes usando)
+            var lines = cart
+                .GroupBy(x => new { x.Id, x.Name, x.Price })
+                .Select(g => new SaleDetailLine
+                {
+                    Id = g.Key.Id,
+                    Name = g.Key.Name,
+                    Price = g.Key.Price,
+                    Qty = g.Count(),
+                    Subtotal = g.Sum(i => i.Price)
+                })
+                .ToList();
+
+            var total = lines.Sum(x => x.Subtotal);
+
+            // Guardar en historial (append en sale.json) — ya tienes helpers LoadSalesLog/SaveSalesLog
+            var log = LoadSalesLog();
+            log.Add(new SaleEntry
+            {
+                Username = GetCurrentUsername(),
+                Total = total,
+                Confirmed = true,
+                DateUtc = DateTime.UtcNow,
+                Items = lines
+            });
+            SaveSalesLog(log);
+
+            // Limpiar carrito
+            SaveCart(new List<CartItem>());
+
+            // Mensaje de éxito y redirigir a Mis pedidos
+            TempData["SuccessMessage"] = $"¡Pago realizado y pedido confirmado, {GetCurrentUsername()}! Total: ${total}";
+            return RedirectToAction("MyOrders");
+        }
 
 
         // ===== Offcanvas para poder ver el carrito =====
@@ -207,6 +257,20 @@ namespace TheOtherSide.Controllers
             return PartialView("~/Views/Shared/_CartBody.cshtml", saleVM);
         }
 
-        
+        [HttpGet]
+        public IActionResult Pago()
+        {
+            var cart = LoadCart();
+            if (cart.Count == 0)
+            {
+                TempData["SuccessMessage"] = "Tu carrito está vacío.";
+                return RedirectToAction("Confirmation");
+            }
+
+            // Reutilizamos tu VM actual (Sale con Cart del JSON y Username)
+            var saleVM = BuildCurrentSaleVM();
+            return View(saleVM);
+        }
+
     }
 }

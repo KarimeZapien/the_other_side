@@ -72,5 +72,27 @@
         "Subtotal": 1998.00
       }
     ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 1898.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-23T17:18:30.2363748Z",
+    "Items": [
+      {
+        "Id": 2002,
+        "Name": "Cartera Guess",
+        "Price": 599.00,
+        "Qty": 1,
+        "Subtotal": 599.00
+      },
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00
+      }
+    ]
   }
 ]

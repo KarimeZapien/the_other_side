@@ -7,6 +7,12 @@
 
 <h2 class="mb-3">Mis pedidos en The Other Side</h2>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+
 @if (Model == null || Model.Count == 0)
 {
     <div class="alert alert-info">Aún no tienes pedidos confirmados.</div>
