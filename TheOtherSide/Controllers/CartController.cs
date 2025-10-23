@@ -203,7 +203,7 @@ namespace TheOtherSide.Controllers
             if (string.IsNullOrWhiteSpace(cardNumber) || string.IsNullOrWhiteSpace(expiry) || string.IsNullOrWhiteSpace(cvv))
             {
                 TempData["SuccessMessage"] = "Por favor completa los datos de pago.";
-                return RedirectToAction("Payment");
+                return RedirectToAction("Pago");
             }
 
             var cart = LoadCart();
@@ -228,7 +228,7 @@ namespace TheOtherSide.Controllers
 
             var total = lines.Sum(x => x.Subtotal);
 
-            // Guardar en historial (append en sale.json) — ya tienes helpers LoadSalesLog/SaveSalesLog
+            // Guardar en historial (append en sale.json) 
             var log = LoadSalesLog();
             log.Add(new SaleEntry
             {
