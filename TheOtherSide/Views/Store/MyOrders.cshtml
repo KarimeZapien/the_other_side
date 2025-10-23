@@ -1,0 +1,62 @@
+﻿@model List<TheOtherSide.Models.SaleEntry>
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Mis pedidos";
+}
+
+<h2 class="mb-3">Mis pedidos en The Other Side</h2>
+
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-info">Aún no tienes pedidos confirmados.</div>
+}
+else
+{
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Mis pedidos</h2>
+        <a class="btn btn-primary" asp-controller="Store" asp-action="MyOrdersPdf">
+            Exportar PDF
+        </a>
+    </div>
+
+    <div class="list-group">
+        @foreach (var s in Model)
+        {
+            <div class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Fecha:</strong> @s.DateUtc.ToLocalTime().ToString("g")
+                        <span class="ms-3"><strong>Total:</strong> $@s.Total</span>
+                    </div>
+                    <span class="badge bg-success">Confirmado</span>
+                </div>
+
+                @if (s.Items != null && s.Items.Any())
+                {
+                    <table class="table table-sm mt-2 mb-0 align-middle">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th class="text-center" style="width:110px">Cantidad</th>
+                                <th class="text-end" style="width:120px">Precio</th>
+                                <th class="text-end" style="width:130px">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var it in s.Items)
+                            {
+                                <tr>
+                                    <td>@it.Name</td>
+                                    <td class="text-center">@it.Qty</td>
+                                    <td class="text-end">$@it.Price</td>
+                                    <td class="text-end">$@it.Subtotal</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        }
+    </div>
+}

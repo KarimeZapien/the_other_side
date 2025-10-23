@@ -46,7 +46,14 @@
                         @if (!string.IsNullOrEmpty(currentUser))
                         {
                             <span class="me-2 text-black">Hola, @currentUser!</span>
+
+                            <a class="btn btn-outline-primary" asp-controller="Store" asp-action="MyOrders">
+                                Mis pedidos
+                            </a>
+
                             <a class="btn btn-outline-dark" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
+
+
                         }
                         else
                         {

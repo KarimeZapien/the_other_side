@@ -1,5 +1,76 @@
-{
-  "Username": "karime",
-  "Total": 11028.00,
-  "Confirmed": true
-}
+[
+  {
+    "Username": "ivana",
+    "Total": 3477.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-23T14:45:19.4306993Z",
+    "Items": [
+      {
+        "Id": 4001,
+        "Name": "Stanley 30 oz Lila",
+        "Price": 879.00,
+        "Qty": 1,
+        "Subtotal": 879.00
+      },
+      {
+        "Id": 4003,
+        "Name": "Coleman Hielera 60QT",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00
+      },
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00
+      }
+    ]
+  },
+  {
+    "Username": "omar",
+    "Total": 179.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-23T14:45:52.9750544Z",
+    "Items": [
+      {
+        "Id": 3003,
+        "Name": "Cheetos Flaming Hot",
+        "Price": 179.00,
+        "Qty": 1,
+        "Subtotal": 179.00
+      }
+    ]
+  },
+  {
+    "Username": "omar",
+    "Total": 3599.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-23T14:46:11.4795128Z",
+    "Items": [
+      {
+        "Id": 2001,
+        "Name": "New Balance 1000",
+        "Price": 3599.00,
+        "Qty": 1,
+        "Subtotal": 3599.00
+      }
+    ]
+  },
+  {
+    "Username": "omar",
+    "Total": 1998.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-23T15:05:41.7733742Z",
+    "Items": [
+      {
+        "Id": 2003,
+        "Name": "Gorra New Era NY",
+        "Price": 999.00,
+        "Qty": 2,
+        "Subtotal": 1998.00
+      }
+    ]
+  }
+]

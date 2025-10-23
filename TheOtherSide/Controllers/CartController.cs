@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
 using TheOtherSide.Models;
+using TheOtherSide.Services;
 using Microsoft.AspNetCore.Http;
 
 namespace TheOtherSide.Controllers
@@ -39,6 +40,13 @@ namespace TheOtherSide.Controllers
             new CartItem { Id = 4006, Name = "Hair, Skin & Nails Gummies",   Price = 239.00m },
         };
 
+        private readonly OrdersPdfService _pdf;
+        public StoreController(OrdersPdfService pdf)
+        {
+            _pdf = pdf;
+        }
+
+
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
         private string SaleSummaryFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); // <-- resumen
 
@@ -65,15 +73,27 @@ namespace TheOtherSide.Controllers
             System.IO.File.WriteAllText(CartFilePath, json);
         }
 
-        // ----- SALE SUMMARY (Username, Total, Confirmed) -----
-        private void SaveSaleSummary(SaleSummary summary)
+
+        // ----- Historial de ventas -----
+        private string SalesLogFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json");
+
+        private List<SaleEntry> LoadSalesLog()
         {
-            summary.Username = GetCurrentUsername(); // asegura el usuario actual
-            var dir = Path.GetDirectoryName(SaleSummaryFilePath)!;
-            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-            var json = JsonSerializer.Serialize(summary, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(SaleSummaryFilePath, json);
+            if (!System.IO.File.Exists(SalesLogFilePath)) return new();
+            var json = System.IO.File.ReadAllText(SalesLogFilePath);
+            return JsonSerializer.Deserialize<List<SaleEntry>>(json) ?? new();
         }
+
+        private void SaveSalesLog(List<SaleEntry> entries)
+        {
+            var dir = Path.GetDirectoryName(SalesLogFilePath)!;
+            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(SalesLogFilePath, json);
+        }
+
+
+
 
         // VM para vistas (tu Sale con items del carrito)
         private Sale BuildCurrentSaleVM()
@@ -110,22 +130,72 @@ namespace TheOtherSide.Controllers
         [HttpPost]
         public IActionResult ConfirmSale()
         {
+            // 1) Leemos carrito actual
             var cart = LoadCart();
-            var total = cart.Sum(x => x.Price);
+            if (cart.Count == 0)
+            {
+                TempData["SuccessMessage"] = "Tu carrito está vacío.";
+                return RedirectToAction("Confirmation");
+            }
 
-            var summary = new SaleSummary
+            // 2) Agrupamos para obtener cantidades y subtotales (sin cambiar tu modelo de carrito)
+            var lines = cart
+                .GroupBy(x => new { x.Id, x.Name, x.Price })
+                .Select(g => new SaleDetailLine
+                {
+                    Id = g.Key.Id,
+                    Name = g.Key.Name,
+                    Price = g.Key.Price,
+                    Qty = g.Count(),
+                    Subtotal = g.Sum(i => i.Price)
+                })
+                .ToList();
+
+            var total = lines.Sum(x => x.Subtotal);
+
+            // 3) Cargamos historial existente, agregamos la nueva venta
+            var log = LoadSalesLog();
+
+            log.Add(new SaleEntry
             {
                 Username = GetCurrentUsername(),
                 Total = total,
-                Confirmed = true
-            };
-            SaveSaleSummary(summary);
+                Confirmed = true,
+                DateUtc = DateTime.UtcNow,
+                Items = lines
+            });
 
-            // Limpia el carrito
-            SaveCart(new List<CartItem>());
+            SaveSalesLog(log);       // <-- guarda/acumula TODAS las ventas
+            SaveCart(new List<CartItem>()); // limpia carrito (si así lo quieres)
 
-            TempData["SuccessMessage"] = $"¡Compra confirmada con éxito, {summary.Username}! Total: ${summary.Total}";
+            TempData["SuccessMessage"] = $"¡Compra confirmada con éxito, {GetCurrentUsername()}! Total: ${total}";
             return RedirectToAction("Confirmation");
+        }
+
+        public IActionResult MyOrders()
+        {
+            var user = GetCurrentUsername();
+            var all = LoadSalesLog();
+            var mine = all
+                .Where(s => s.Confirmed && string.Equals(s.Username, user, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(s => s.DateUtc)
+                .ToList();
+
+            return View(mine);
+        }
+
+        public IActionResult MyOrdersPdf()
+        {
+            var user = GetCurrentUsername();
+            var all = LoadSalesLog();
+            var mine = all
+                .Where(s => s.Confirmed && string.Equals(s.Username, user, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(s => s.DateUtc)
+                .ToList();
+
+            var bytes = _pdf.Build(mine, user);
+            var fileName = $"MisPedidos_{user}_{DateTime.Now:yyyyMMdd_HHmm}.pdf";
+            return File(bytes, "application/pdf", fileName);
         }
 
 
