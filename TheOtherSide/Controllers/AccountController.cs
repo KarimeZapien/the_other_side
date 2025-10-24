@@ -22,7 +22,7 @@ namespace TheOtherSide.Controllers
             if (!System.IO.File.Exists(UsersPath)) //verifica si el archivo json existe
                 return new List<User>();
             var json = System.IO.File.ReadAllText(UsersPath);
-            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>(); //si no hay usuarios, me da una lista vacía
+            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>(); //si no hay usuarios, me da una lista vacï¿½a
         }
 
         private void SaveUsers(List<User> users) //guarda los usuarios en el archivo json
@@ -44,12 +44,12 @@ namespace TheOtherSide.Controllers
             var user = users.Find(u => u.Username == username && u.Password == password);
             if (user != null)
             {
-                // guardar la sesión del usuario
+                // guardar la sesiï¿½n del usuario
                 HttpContext.Session.SetString("Username", username);
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewBag.ErrorMessage = "Usuario o contraseña inválidos.";
+            ViewBag.ErrorMessage = "Usuario o contraseï¿½a invï¿½lidos.";
             return View();
         }
 
@@ -62,26 +62,26 @@ namespace TheOtherSide.Controllers
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) //por si los dejan en blanco
             {
-                ViewBag.ErrorMessage = "El usuario y/o contraseña son obligatorios.";
+                ViewBag.ErrorMessage = "El usuario y/o contraseï¿½a son obligatorios.";
                 return View();
             }
             if (password != confirm) //por si no coinciden
             {
-                ViewBag.ErrorMessage = "Las contraseñas no coinciden.";
+                ViewBag.ErrorMessage = "Las contraseï¿½as no coinciden.";
                 return View();
             }
 
             var users = LoadUsers();
             if (users.Exists(u => u.Username == username)) //si ya existe el usuario
             {
-                ViewBag.ErrorMessage = "Este usuario ya está registrado.";
+                ViewBag.ErrorMessage = "Este usuario ya estï¿½ registrado.";
                 return View();
             }
 
             users.Add(new User { Username = username, Password = password });
             SaveUsers(users);
 
-            ViewBag.SuccessMessage = "Se creó el usuario. Puede iniciar sesión.";
+            ViewBag.SuccessMessage = "Se creï¿½ el usuario. Puede iniciar sesiï¿½n.";
             return View(); 
         }
 
