@@ -39,37 +39,38 @@
             </a>
         </div>
 
-        <!-- Card: Gorra New Era NY (negra) -->
+        <!-- Card: Gorra 31 Hats "NY Flames" -->
         <div class="col-12 col-md-4 mb-4">
             <a href="#" data-bs-toggle="modal" data-bs-target="#GorraNY_Ventana" class="text-decoration-none">
                 <div class="card product-card">
                     <div class="image-container">
-                        <img src="~/img/hombre/11.png" class="img-front" alt="Gorra New Era NY frente">
-                        <img src="~/img/hombre/gorra negra 2.png" class="img-back" alt="Gorra New Era NY atrás">
+                        <img src="~/img/hombre/NYFLAMES.png" class="img-front" alt="Gorra 31 Hats NY Flames frente">
+                        <img src="~/img/hombre/NYFLAMES4.png" class="img-back" alt="Gorra 31 Hats NY Flames atrás">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Gorra New Era NY</h5>
+                        <h5 class="card-title">Gorra 31 Hats "NY Flames"</h5>
+                        <p class="card-text">$2,000.00</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card: Camiseta Anuel x Reebok -->
+        <div class="col-12 col-md-4 mb-4">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#CamisetaAnuel_Ventana" class="text-decoration-none">
+                <div class="card product-card">
+                    <div class="image-container">
+                        <img src="~/img/hombre/AnuelXRebook1.png" class="img-front" alt="Camiseta Anuel x Reebok - frente">
+                        <img src="~/img/hombre/REBOOK ATRAS.png" class="img-back" alt="Camiseta Anuel x Reebok - atrás">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Playera Gráfica Anuel AA x Reebok</h5>
                         <p class="card-text">$999.00</p>
                     </div>
                 </div>
             </a>
         </div>
 
-        <!-- Card: Gorra Carhartt de Lona (azul) -->
-        <div class="col-12 col-md-4 mb-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#GorraCarhartt_Ventana" class="text-decoration-none">
-                <div class="card product-card">
-                    <div class="image-container">
-                        <img src="~/img/hombre/16.png" class="img-front" alt="Gorra Carhartt lona frente">
-                        <img src="~/img/hombre/gorra azul 2.png" class="img-back" alt="Gorra Carhartt lona atrás">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Gorra Carhartt de Lona</h5>
-                        <p class="card-text">$750.00</p>
-                    </div>
-                </div>
-            </a>
-        </div>
 
         <!-- Card: Reloj Lacoste -->
         <div class="col-12 col-md-4 mb-4">
@@ -208,19 +209,29 @@
     </div>
 </div>
 
-<!-- Modal: Gorra New Era NY -->
-<div class="modal fade" id="GorraNY_Ventana" tabindex="-1" aria-labelledby="GorraNYLabel" aria-hidden="true">
+<!-- Modal: Gorra 31 Hats "NY Flames" -->
+<div class="modal fade" id="GorraNY_Ventana" tabindex="-1" aria-labelledby="GorraNY_Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
+
                 <div class="col-md-6">
                     <div id="carouselGorraNY_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/img/hombre/11.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 1">
+                                <img src="~/img/hombre/NYFLAMES.png" class="d-block w-100 carousel-modal-img" alt="NY Flames frente">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/img/hombre/gorra negra 2.png" class="d-block w-100 carousel-modal-img" alt="Gorra NY 2">
+                                <img src="~/img/hombre/NYFlames2.png" class="d-block w-100 carousel-modal-img" alt="NY Flames detalle 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/NYFLAMES3.png" class="d-block w-100 carousel-modal-img" alt="NY Flames lateral">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/NYFLAMES4.png" class="d-block w-100 carousel-modal-img" alt="NY Flames atrás">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/hombre/NYFLAMES5.png" class="d-block w-100 carousel-modal-img" alt="NY Flames detalle 2">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraNY_h" data-bs-slide="prev">
@@ -231,19 +242,19 @@
                         </button>
                     </div>
                 </div>
+
                 <div class="col-md-6">
-                    <h3 id="GorraNYLabel" class="fw-bold">Gorra New Era NY</h3>
-                    <p class="text-muted">Ajuste clásico con visera curva.</p>
-                    <p class="fs-3 fw-bold text-success">$999.00</p>
+                    <h3 id="GorraNY_Label" class="fw-bold">Gorra 31 Hats "NY Flames"</h3>
+                    <p class="text-muted">Gorra de visera curva en gamuza, con bordados de excelente calidad y pedrería alrededor. Diseño único y exclusivo.</p>
+                    <p class="fs-3 fw-bold text-success">$2,000.00</p>
 
                     <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
                         <input type="hidden" name="id" value="2003" />
                         <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
                     </form>
-
-
                 </div>
             </div>
+
             <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
@@ -251,40 +262,54 @@
     </div>
 </div>
 
-<!-- Modal: Gorra Carhartt -->
-<div class="modal fade" id="GorraCarhartt_Ventana" tabindex="-1" aria-labelledby="GorraCarharttLabel" aria-hidden="true">
+<!-- Modal: Camiseta Anuel x Reebok -->
+<div class="modal fade" id="CamisetaAnuel_Ventana" tabindex="-1" aria-labelledby="CamisetaAnuel_Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
+
                 <div class="col-md-6">
-                    <div id="carouselGorraCarhartt_h" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselCamisetaAnuel_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/img/hombre/16.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 1">
+                                <img src="~/img/hombre/AnuelXRebook1.png" class="d-block w-100 carousel-modal-img" alt="Camiseta Anuel x Reebok - frente">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/img/hombre/gorra azul 2.png" class="d-block w-100 carousel-modal-img" alt="Carhartt 2">
+                                <img src="~/img/hombre/REBOOK ATRAS.png" class="d-block w-100 carousel-modal-img" alt="Camiseta Anuel x Reebok - atrás">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCamisetaAnuel_h" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGorraCarhartt_h" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCamisetaAnuel_h" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h3 id="GorraCarharttLabel" class="fw-bold">Gorra Carhartt de Lona</h3>
-                    <p class="text-muted">Durabilidad y comodidad para el día a día.</p>
-                    <p class="fs-3 fw-bold text-success">$750.00</p>
 
+                <div class="col-md-6">
+                    <h3 id="CamisetaAnuel_Label" class="fw-bold">Playera Gráfica Anuel AA x Reebok</h3>
+                    <p class="text-muted">Diseño simple con la frase icónica del artista. Corte cómodo para el diario.</p>
+                    <p class="fs-3 fw-bold text-success">$999.00</p>
+
+                    <!-- Selector de talla -->
+                    <div class="mb-3">
+                        <label for="tallaAnuel" class="form-label">Selecciona tu talla:</label>
+                        <select class="form-select" id="tallaAnuel" name="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </div>
+
+                    <!-- Agregar al carrito -->
                     <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
                         <input type="hidden" name="id" value="2004" />
+                        <!-- Si tu backend lee la talla desde el form, este name="size" ya la manda -->
                         <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
                     </form>
-
                 </div>
+
             </div>
             <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

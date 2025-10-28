@@ -14,30 +14,33 @@ namespace TheOtherSide.Controllers
         // aqui agregamos nuestros productos de todas las categorias
         private static readonly List<CartItem> AvailableItems = new()
         {
-            new CartItem { Id = 2001, Name = "New Balance 1000",      Price = 3599.00m },
-            new CartItem { Id = 2002, Name = "Cartera Guess",          Price =  599.00m },
-            new CartItem { Id = 2003, Name = "Gorra New Era NY",       Price =  999.00m },
-            new CartItem { Id = 2004, Name = "Gorra Carhartt de Lona", Price =  750.00m },
-            new CartItem { Id = 2005, Name = "Reloj Lacoste",          Price = 2749.00m },
-            new CartItem { Id = 2006, Name = "Perfume Acqua Di Gio",   Price = 1999.00m },
-            new CartItem { Id = 1001, Name = "Rhode Lip Treatment",   Price = 499.00m },
-            new CartItem { Id = 1002, Name = "Pleasing Boat Tote",   Price = 1299.00m },
-            new CartItem { Id = 1003, Name = "28 Colour Denim Jacket Ecru",   Price = 2499.00m },
-            new CartItem { Id = 1004, Name = "Perfume Cloud 100 mL",   Price = 1938.00m },
-            new CartItem { Id = 1005, Name = "Kit Rare Beauty x Tajín",   Price = 699.00m },
-            new CartItem { Id = 1006, Name = "Starlet Lustrous Liquid Eyeshadow",   Price = 699.00m },
-            new CartItem { Id = 3001, Name = "Chips Ahoy Stranger Things",   Price = 210.00m },
-            new CartItem { Id = 3002, Name = "Reeses Halloween Edition",   Price = 219.00m },
-            new CartItem { Id = 3003, Name = "Cheetos Flaming Hot",   Price = 179.00m },
-            new CartItem { Id = 3004, Name = "Lotus Biscoff",   Price = 150.00m },
-            new CartItem { Id = 3005, Name = "Oreo Double Stuf",   Price = 205.00m },
-            new CartItem { Id = 3006, Name = "Sour Patch Watermelon",   Price = 199.00m },
-            new CartItem { Id = 4001, Name = "Stanley 30 oz Lila",   Price = 879.00m },
-            new CartItem { Id = 4002, Name = "Owala 32 oz Deep Black",   Price = 749.00m },
-            new CartItem { Id = 4003, Name = "Coleman Hielera 60QT",   Price = 1299.00m },
-            new CartItem { Id = 4004, Name = "Shark MultiStyle",   Price = 6599.00m },
-            new CartItem { Id = 4005, Name = "Crayola SuperTips 50 pz",   Price = 219.00m },
-            new CartItem { Id = 4006, Name = "Hair, Skin & Nails Gummies",   Price = 239.00m },
+            new CartItem { Id = 2001, Name = "New Balance 1000",                      Price = 3599.00m },
+            new CartItem { Id = 2002, Name = "Cartera Guess",                          Price =  599.00m },
+
+            // Reemplazos solicitados
+            new CartItem { Id = 2003, Name = "Gorra 31 Hats \"NY Flames\"",            Price = 2000.00m },
+            new CartItem { Id = 2004, Name = "Playera Gráfica Anuel AA x Reebok",      Price =  999.00m },
+
+            new CartItem { Id = 2005, Name = "Reloj Lacoste",                          Price = 2749.00m },
+            new CartItem { Id = 2006, Name = "Perfume Acqua Di Gio",                   Price = 1999.00m },
+            new CartItem { Id = 1001, Name = "Rhode Lip Treatment",                    Price =  499.00m },
+            new CartItem { Id = 1002, Name = "Pleasing Boat Tote",                     Price = 1299.00m },
+            new CartItem { Id = 1003, Name = "28 Colour Denim Jacket Ecru",            Price = 2499.00m },
+            new CartItem { Id = 1004, Name = "Perfume Cloud 100 mL",                   Price = 1938.00m },
+            new CartItem { Id = 1005, Name = "Kit Rare Beauty x Tajín",                Price =  699.00m },
+            new CartItem { Id = 1006, Name = "Starlet Lustrous Liquid Eyeshadow",      Price =  699.00m },
+            new CartItem { Id = 3001, Name = "Chips Ahoy Stranger Things",             Price =  210.00m },
+            new CartItem { Id = 3002, Name = "Reeses Halloween Edition",               Price =  219.00m },
+            new CartItem { Id = 3003, Name = "Cheetos Flaming Hot",                    Price =  179.00m },
+            new CartItem { Id = 3004, Name = "Lotus Biscoff",                          Price =  150.00m },
+            new CartItem { Id = 3005, Name = "Oreo Double Stuf",                       Price =  205.00m },
+            new CartItem { Id = 3006, Name = "Sour Patch Watermelon",                  Price =  199.00m },
+            new CartItem { Id = 4001, Name = "Stanley 30 oz Lila",                     Price =  879.00m },
+            new CartItem { Id = 4002, Name = "Owala 32 oz Deep Black",                 Price =  749.00m },
+            new CartItem { Id = 4003, Name = "Coleman Hielera 60QT",                   Price = 1299.00m },
+            new CartItem { Id = 4004, Name = "Shark MultiStyle",                       Price = 6599.00m },
+            new CartItem { Id = 4005, Name = "Crayola SuperTips 50 pz",                Price =  219.00m },
+            new CartItem { Id = 4006, Name = "Hair, Skin & Nails Gummies",             Price =  239.00m },
         };
 
         private readonly OrdersPdfService _pdf;
@@ -46,9 +49,7 @@ namespace TheOtherSide.Controllers
             _pdf = pdf;
         }
 
-
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
-
 
         private string GetCurrentUsername()
         {
@@ -62,8 +63,29 @@ namespace TheOtherSide.Controllers
         {
             if (!System.IO.File.Exists(CartFilePath)) return new();
             var json = System.IO.File.ReadAllText(CartFilePath);
-            return JsonSerializer.Deserialize<List<CartItem>>(json) ?? new();
+            var cart = JsonSerializer.Deserialize<List<CartItem>>(json) ?? new();
+
+            // >>> Sincroniza nombre/precio con el catálogo por Id (corrige datos viejos en cart.json)
+            SyncCartWithCatalog(cart);
+
+            return cart;
         }
+
+        // Actualiza los items del carrito con los datos vigentes del catálogo (por Id)
+        private void SyncCartWithCatalog(List<CartItem> cart)
+        {
+            // Si cambiamos más adelante otros productos, basta con tocar AvailableItems.
+            foreach (var it in cart)
+            {
+                var master = AvailableItems.FirstOrDefault(x => x.Id == it.Id);
+                if (master != null)
+                {
+                    it.Name = master.Name;
+                    it.Price = master.Price;
+                }
+            }
+        }
+
         private void SaveCart(List<CartItem> cart)
         {
             var dir = Path.GetDirectoryName(CartFilePath)!;
@@ -71,7 +93,6 @@ namespace TheOtherSide.Controllers
             var json = JsonSerializer.Serialize(cart, new JsonSerializerOptions { WriteIndented = true });
             System.IO.File.WriteAllText(CartFilePath, json);
         }
-
 
         // ----- Historial de ventas -----
         private string SalesLogFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json");
@@ -113,7 +134,6 @@ namespace TheOtherSide.Controllers
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
-
         public IActionResult Confirmation()
         {
             var saleVM = BuildCurrentSaleVM(); // username + items actuales del carrito
@@ -154,12 +174,12 @@ namespace TheOtherSide.Controllers
                 Username = GetCurrentUsername(),
                 Total = total,
                 Confirmed = true,
-                DateUtc = DateTime.UtcNow,
+                DateUtc = System.DateTime.UtcNow,
                 Items = lines
             });
 
-            SaveSalesLog(log);       // <-- guarda/acumula TODAS las ventas
-            SaveCart(new List<CartItem>()); // limpia carrito (si así lo quieres)
+            SaveSalesLog(log);             // guarda/acumula TODAS las ventas
+            SaveCart(new List<CartItem>()); // limpia carrito
 
             TempData["SuccessMessage"] = $"¡Compra confirmada con éxito, {GetCurrentUsername()}! Total: ${total}";
             return RedirectToAction("Confirmation");
@@ -170,7 +190,7 @@ namespace TheOtherSide.Controllers
             var user = GetCurrentUsername();
             var all = LoadSalesLog();
             var mine = all
-                .Where(s => s.Confirmed && string.Equals(s.Username, user, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.Confirmed && string.Equals(s.Username, user, System.StringComparison.OrdinalIgnoreCase))
                 .OrderByDescending(s => s.DateUtc)
                 .ToList();
 
@@ -182,14 +202,15 @@ namespace TheOtherSide.Controllers
             var user = GetCurrentUsername();
             var all = LoadSalesLog();
             var mine = all
-                .Where(s => s.Confirmed && string.Equals(s.Username, user, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.Confirmed && string.Equals(s.Username, user, System.StringComparison.OrdinalIgnoreCase))
                 .OrderByDescending(s => s.DateUtc)
                 .ToList();
 
             var bytes = _pdf.Build(mine, user);
-            var fileName = $"MisPedidos_{user}_{DateTime.Now:yyyyMMdd_HHmm}.pdf";
+            var fileName = $"MisPedidos_{user}_{System.DateTime.Now:yyyyMMdd_HHmm}.pdf";
             return File(bytes, "application/pdf", fileName);
         }
+
         [HttpPost]
         public IActionResult ProcessPayment(string cardNumber, string expiry, string cvv)
         {
@@ -227,7 +248,7 @@ namespace TheOtherSide.Controllers
                 Username = GetCurrentUsername(),
                 Total = total,
                 Confirmed = true,
-                DateUtc = DateTime.UtcNow,
+                DateUtc = System.DateTime.UtcNow,
                 Items = lines
             });
             SaveSalesLog(log);
@@ -238,7 +259,6 @@ namespace TheOtherSide.Controllers
             TempData["SuccessMessage"] = $"¡Pago realizado y pedido confirmado, {GetCurrentUsername()}! Total: ${total}";
             return RedirectToAction("MyOrders");
         }
-
 
         // ===== Offcanvas para poder ver el carrito =====
         [HttpGet]
@@ -261,6 +281,5 @@ namespace TheOtherSide.Controllers
             var saleVM = BuildCurrentSaleVM();
             return View(saleVM);
         }
-
     }
 }
