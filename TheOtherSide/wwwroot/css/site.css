@@ -163,7 +163,7 @@ main {
     }
 
     .product-card .card-title {
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Poppins', serif;
         font-weight: 400;
         color: #000;
         font-size: 1.2rem;
@@ -171,7 +171,7 @@ main {
     }
 
     .product-card .card-text {
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Poppins', serif;
         font-weight: 300;
         color: #000;
         font-size: 1.1rem;
@@ -255,7 +255,7 @@ main {
         margin-bottom: .75rem;
     }
 
-/* Botón Comprar (ghost) */
+/* Botón Comprar */
 .btn-buy {
     background: transparent;
     color: #111;
@@ -297,4 +297,25 @@ main {
     .product-slide-img, .product-info {
         max-width: 92vw;
     }
+}
+
+:root {
+    --heading-font: 'Poppins', sans-serif;
+}
+
+.menu_imagen .card-title {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.best-sellers h2,
+.best-sellers .card-title,
+.best-sellers .card-text {
+    font-family: var(--heading-font);
+}
+
+.best-sellers h2 {
+    font-weight: 700;
+    letter-spacing: .3px;
 }
