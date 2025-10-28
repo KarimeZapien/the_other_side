@@ -213,7 +213,6 @@ namespace TheOtherSide.Controllers
                 return RedirectToAction("Confirmation");
             }
 
-            // Agrupar para obtener Qty/Subtotales (como ya vienes usando)
             var lines = cart
                 .GroupBy(x => new { x.Id, x.Name, x.Price })
                 .Select(g => new SaleDetailLine
