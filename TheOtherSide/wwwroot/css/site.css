@@ -1,40 +1,61 @@
-/* Reset general */
+/* =========================
+   1) Variables y tipografía global
+   ========================= */
+:root {
+    --bs-body-font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --heading-font: 'Poppins', sans-serif;
+}
+
+/* Fuente global en toda la app */
 html, body {
+    font-family: var(--bs-body-font-family) !important;
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-/* Ajuste de fuente para pantallas grandes */
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 700;
+}
+
+button, input, select, textarea,
+.navbar, .dropdown-menu, .offcanvas, .modal, .card, .btn, .form-control {
+    font-family: inherit;
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
 }
 
-/* El contenido se expande y empuja el footer */
 main {
     flex: 1;
 }
 
-/* Botones al enfocar */
+/* =========================
+   2) Accesibilidad / focus
+   ========================= */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
 .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-/* Navbar personalizada */
+/* =========================
+   3) Navbar
+   ========================= */
 .navbar-custom {
-    background-color: white !important;
-    border-bottom: 2px solid black;
+    background-color: #fff !important;
+    border-bottom: 2px solid #000;
     box-shadow: none;
     background-image: none !important;
 }
 
     .navbar-custom .nav-link {
         font-weight: 500;
-        color: black !important;
+        color: #000 !important;
     }
 
         .navbar-custom .nav-link:hover {
@@ -43,15 +64,18 @@ main {
 
 /* Ícono toggle */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Estilo para cards de menú */
+/* =========================
+   4) Cards de menú (home)
+   ========================= */
 .menu_imagen .card {
     border: none;
     box-shadow: none;
     overflow: hidden;
     border-radius: 10px;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .menu_imagen .card-img {
@@ -59,22 +83,23 @@ main {
     width: 100%;
     object-fit: cover;
     border: none;
-    box-shadow: none;
     display: block;
 }
 
 .menu_imagen .card-title {
+    font-family: var(--heading-font);
     font-size: 1.8rem;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
 }
 
 .menu_imagen .card:hover {
     transform: scale(1.05);
-    transition: transform 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
 }
 
-/* Footer */
+/* =========================
+   5) Footer
+   ========================= */
 .footer-custom {
     background-color: #e3f2fd;
     border-top: 1px solid #ccc;
@@ -85,16 +110,18 @@ main {
 
     .footer-custom a {
         color: #007bff;
-        transition: color 0.3s;
+        transition: color .3s;
     }
 
         .footer-custom a:hover {
             color: #0056b3;
         }
 
-/* Barra de búsqueda */
+/* =========================
+   6) Barra de búsqueda
+   ========================= */
 .search-bar {
-    background-color: #000;
+    background: #000;
     color: #fff;
     border: 1px solid #333;
 }
@@ -103,58 +130,20 @@ main {
         color: #ccc;
     }
 
-/* ====== COMPONENTES DE PRODUCTO (otras secciones) ====== */
-.product-card .image-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.product-card img {
-    transition: opacity 0.4s ease;
-    width: 100%;
-}
-
-.product-card .img-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.product-card:hover .img-front {
-    opacity: 0;
-}
-
-.product-card:hover .img-back {
-    opacity: 1;
-}
-
-.pagina-producto {
-    background-color: #fff;
-    font-family: Arial, sans-serif;
-}
-
-/* Modal de producto (lado izquierdo) */
-.carousel-modal-img {
-    width: 100%;
-    height: 400px; /* tamaño del visor */
-    object-fit: contain;
-    background: #fff;
-    border-radius: 10px;
-}
-
-/* Tarjetas de productos (otras vistas) */
+/* =========================
+   7) Componentes de producto
+   ========================= */
 .product-card {
     border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     max-width: 125%;
     margin: 0 auto;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
     .product-card:hover {
         transform: scale(1.03);
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
     }
 
     .product-card img {
@@ -162,72 +151,91 @@ main {
         border-radius: 8px;
     }
 
-    .product-card .card-title {
-        font-family: 'Poppins', serif;
-        font-weight: 400;
+    .product-card .image-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-card .img-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .product-card:hover .img-front {
+        opacity: 0;
+    }
+
+    .product-card:hover .img-back {
+        opacity: 1;
+    }
+
+    .product-card .card-title,
+    .product-card .card-text {
+        font-family: inherit;
         color: #000;
+    }
+
+    .product-card .card-title {
+        font-weight: 400;
         font-size: 1.2rem;
         margin-top: 10px;
     }
 
     .product-card .card-text {
-        font-family: 'Poppins', serif;
         font-weight: 300;
-        color: #000;
         font-size: 1.1rem;
         margin-bottom: 0;
     }
 
-/* Quitar subrayado en enlaces de tarjetas */
 .product-link {
     text-decoration: none !important;
     color: inherit;
 }
 
-.image-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.img-back {
-    position: absolute;
-    top: 0;
-    left: 0;
+.carousel-modal-img {
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 400px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
 }
 
-.product-card:hover .img-back {
-    opacity: 1;
+/* =========================
+   8) Best sellers (home)
+   ========================= */
+.best-sellers h2,
+.best-sellers .card-title,
+.best-sellers .card-text {
+    font-family: inherit;
 }
 
-/* ====== BEST SELLERS (home) ====== */
+.best-sellers h2 {
+    font-weight: 700;
+    letter-spacing: .3px;
+}
 
-/* Oculta indicadores si alguien los agrega por error */
+/* Carousel */
 #productosimagenes .carousel-indicators {
     display: none;
 }
 
-/* Slide se adapta al contenido */
 #productosimagenes .carousel-item {
     background: transparent;
     text-align: center;
 }
 
-/* Imagen del producto */
 .product-slide-img {
     display: block;
     margin: 0 auto;
-    width: auto;
-    height: auto;
     max-width: 420px;
     max-height: 65vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 
-/* Info debajo de la imagen (estilo limpio) */
 .product-info {
     margin: 1rem auto 0;
     max-width: 420px;
@@ -237,7 +245,7 @@ main {
     text-align: center;
     border-radius: 0;
     box-shadow: none;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    font-family: inherit; 
 }
 
     .product-info .price {
@@ -272,13 +280,12 @@ main {
         border-color: #111;
     }
 
-/* Asegurar clic en el botón por encima de zonas laterales */
 #productosimagenes .product-info {
     position: relative;
     z-index: 5;
 }
 
-/* Controles laterales sin icono, debajo del caption y con área lateral */
+/* Controles laterales sin icono */
 #productosimagenes .carousel-control-prev,
 #productosimagenes .carousel-control-next {
     z-index: 1;
@@ -292,30 +299,8 @@ main {
     display: none;
 }
 
-/* Responsive best sellers */
 @media (max-width: 480px) {
     .product-slide-img, .product-info {
         max-width: 92vw;
     }
-}
-
-:root {
-    --heading-font: 'Poppins', sans-serif;
-}
-
-.menu_imagen .card-title {
-    font-family: var(--heading-font);
-    font-weight: 700;
-    letter-spacing: .3px;
-}
-
-.best-sellers h2,
-.best-sellers .card-title,
-.best-sellers .card-text {
-    font-family: var(--heading-font);
-}
-
-.best-sellers h2 {
-    font-weight: 700;
-    letter-spacing: .3px;
 }
