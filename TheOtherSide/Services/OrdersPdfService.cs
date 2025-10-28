@@ -13,7 +13,7 @@ namespace TheOtherSide.Services
             {
                 container.Page(page =>
                 {
-                    page.Margin(36);                     // ~0.5"
+                    page.Margin(36);                  
                     page.Size(PageSizes.A4);
                     page.DefaultTextStyle(x => x.FontSize(11));
 

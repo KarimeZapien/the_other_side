@@ -48,7 +48,6 @@ namespace TheOtherSide.Controllers
 
 
         private string CartFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "cart.json");
-        //private string SaleSummaryFilePath => Path.Combine(Directory.GetCurrentDirectory(), "AppData", "sale.json"); // <-- resumen
 
 
         private string GetCurrentUsername()
@@ -92,14 +91,8 @@ namespace TheOtherSide.Controllers
             System.IO.File.WriteAllText(SalesLogFilePath, json);
         }
 
-
-
-
-        // VM para vistas (tu Sale con items del carrito)
         private Sale BuildCurrentSaleVM()
             => new Sale { Username = GetCurrentUsername(), Cart = LoadCart(), Confirmed = false };
-
-
 
         [HttpPost]
         public IActionResult AddToCart(int id)
@@ -242,7 +235,6 @@ namespace TheOtherSide.Controllers
             // Limpiar carrito
             SaveCart(new List<CartItem>());
 
-            // Mensaje de éxito y redirigir a Mis pedidos
             TempData["SuccessMessage"] = $"¡Pago realizado y pedido confirmado, {GetCurrentUsername()}! Total: ${total}";
             return RedirectToAction("MyOrders");
         }
@@ -266,7 +258,6 @@ namespace TheOtherSide.Controllers
                 return RedirectToAction("Confirmation");
             }
 
-            // Reutilizamos tu VM actual (Sale con Cart del JSON y Username)
             var saleVM = BuildCurrentSaleVM();
             return View(saleVM);
         }
