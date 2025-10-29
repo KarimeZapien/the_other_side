@@ -1,0 +1,58 @@
+[
+    {
+        "id": "pagos_aceptados",
+        "q": "¿Qué métodos de pago aceptan?",
+        "a": "Aceptamos tarjetas de crédito y débito y plataformas seguras en México (incluido PayPal). Verás todas las opciones al finalizar tu compra.\n\n**Detalles**\n• Tarjetas: Visa, Mastercard y débito.\n• Plataformas: PayPal y otras locales.\n• Seguridad: procesamos pagos a través de un proveedor certificado.\n\n¿Quieres que te guíe al checkout?",
+        "keywords": [ "pago", "pagos", "tarjeta", "paypal", "metodos", "métodos", "msi" ],
+        "followups": [ "¿Hay meses sin intereses?", "¿Cómo cambiar el método de pago?" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "pagos_msi",
+        "q": "¿Tienen meses sin intereses?",
+        "a": "Podemos ofrecer MSI en promociones específicas. Si está activo, verás la opción en el checkout y en productos participantes.\n\n**Detalles**\n• Mínimo de compra: puede aplicar.\n• Bancos participantes: varían por campaña.\n• Confirmación: el resumen de pago mostrará las mensualidades.\n\n¿Revisamos si tu carrito califica?",
+        "keywords": [ "msi", "meses sin intereses", "promociones", "bancos" ],
+        "followups": [ "Ver métodos de pago", "Ver carrito" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "envio_tiempo",
+        "q": "¿Cuánto tarda el envío?",
+        "a": "El envío tarda de 2 a 4 días hábiles en la mayoría de las ciudades de México.\n\n**Detalles**\n• Procesamiento: 24 h hábiles.\n• Rastreo: te enviamos guía por email al despachar.\n• Cobertura: zonas remotas pueden tardar 1–2 días extra.\n\n¿Te comparto el estatus de tu pedido?",
+        "keywords": [ "envio", "envíos", "tiempo", "llega", "cuando", "paquete" ],
+        "followups": [ "¿Cuánto cuesta el envío?", "Rastrear mi pedido" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "envio_costo",
+        "q": "¿Cuánto cuesta el envío?",
+        "a": "Calculamos el costo según tu dirección y el total del carrito. Verás el monto exacto antes de pagar.\n\n**Detalles**\n• Envío gratis: en promociones o a partir de cierto monto.\n• Paqueterías: trabajamos con operadores nacionales.\n\n¿Quieres que cotice con tu CP?",
+        "keywords": [ "costo envio", "envio gratis", "costo de envio", "paqueteria" ],
+        "followups": [ "Tiempo de envío", "Cobertura de zonas" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "devoluciones_politica",
+        "q": "¿Cuál es la política de devoluciones?",
+        "a": "Aceptamos devoluciones y cambios dentro de 30 días si el producto está nuevo y con etiquetas.\n\n**Pasos**\n1) Solicita tu devolución/cambio.\n2) Empaca con etiqueta original.\n3) Usa la guía que te enviamos.\n\n¿Quieres iniciar una devolución ahora?",
+        "keywords": [ "devolucion", "devolución", "cambio", "cambios", "politica" ],
+        "followups": [ "Cómo iniciar un cambio", "Condiciones de cambio" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "pedido_rastreo",
+        "q": "¿Cómo rastreo mi pedido?",
+        "a": "Cuando despachamos, te enviamos un correo con la guía y un enlace de rastreo.\n\n**Si no lo encuentras**\n• Revisa spam o busca “TheOtherSide guía”.\n• Si ya tienes número: compártemelo y verifico aquí.\n\n¿Quieres que lo busquemos ahora?",
+        "keywords": [ "rastreo", "guia", "seguimiento", "tracking", "pedido" ],
+        "followups": [ "Tiempo de envío", "Contactar soporte" ],
+        "source": "kb/faq"
+    },
+    {
+        "id": "cancelacion",
+        "q": "¿Puedo cancelar mi pedido?",
+        "a": "Podemos cancelar antes de que el pedido sea despachado.\n\n**Pasos**\n1) Compárteme tu número de pedido.\n2) Confirmo si aún está en preparación.\n3) Te aviso el resultado y reembolso si aplica.\n\n¿Tienes el número a la mano?",
+        "keywords": [ "cancelar", "cancelación", "reembolso", "pedido" ],
+        "followups": [ "Estado de pedido", "Cambiar dirección de envío" ],
+        "source": "kb/faq"
+    }
+]

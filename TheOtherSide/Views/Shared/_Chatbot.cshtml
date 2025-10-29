@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="tos-chatbot" class="tos-chatbot" aria-live="polite">
+    <!-- Botón flotante -->
+    <button id="tos-chatbot-toggle"
+            class="tos-chatbot__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="tos-chatbot-window"
+            aria-label="Abrir chat de ayuda">
+        <span class="tos-chatbot__toggle-avatars">
+            <img src="~/img/chatbot/bot.png" alt="" class="state state--default" />
+            <img src="~/img/chatbot/bot-angry.png" alt="" class="state state--hover" />
+        </span>
+    </button>
+
+    <!-- Ventana -->
+    <div id="tos-chatbot-window" class="tos-chatbot__window" role="dialog" aria-modal="false" aria-labelledby="chubby-title" hidden>
+        <div class="tos-chatbot__header">
+            <div class="d-flex align-items-center gap-2">
+                <div class="tos-chatbot__avatar-wrap" aria-hidden="true">
+                    <img src="~/img/chatbot/bot.png" alt="" class="tos-chatbot__avatar" />
+                    <span class="tos-chatbot__status" title="En línea"></span>
+                </div>
+                <div class="d-flex flex-column">
+                    <h2 id="chubby-title" class="m-0 tos-title">Chubby</h2>
+                    <small class="tos-subtitle">Asistente virtual · Productos Americanos.</small>
+                </div>
+            </div>
+            <div class="tos-chatbot__header-actions">
+                <button id="tos-chatbot-close" class="tos-icon-btn" type="button" aria-label="Cerrar" title="Cerrar">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="tos-chatbot-messages" class="tos-chatbot__messages" tabindex="0" aria-label="Mensajes del chat"></div>
+
+        <div class="tos-chatbot__typing" id="tos-typing" hidden>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+
+        <div class="tos-chatbot__suggestions" id="tos-chatbot-suggestions" aria-label="Sugerencias rápidas"></div>
+
+        <div class="tos-chatbot__footer">
+            <form id="tos-chatbot-form" class="tos-inputbar" novalidate>
+                <label for="tos-chatbot-input" class="visually-hidden">Escribe tu mensaje</label>
+                <input id="tos-chatbot-input"
+                       class="tos-input"
+                       type="text"
+                       placeholder="Escribe tu mensaje…"
+                       maxlength="500"
+                       autocomplete="off" />
+
+                <button class="tos-send-btn" type="submit" aria-label="Enviar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
