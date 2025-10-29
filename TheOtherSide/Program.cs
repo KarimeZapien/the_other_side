@@ -1,13 +1,20 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TheOtherSide.Services;
+using TheOtherSide.Services; //NO MOVER NO QUITAR
+using QuestPDF.Fluent; //NO MOVER NO QUITAR
+using QuestPDF.Infrastructure; //NO MOVER NO QUITAR
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MVC
 builder.Services.AddControllersWithViews();
+
+// PDF----- MO MOVER
+QuestPDF.Settings.License = LicenseType.Community;
+builder.Services.AddSingleton<OrdersPdfService>();
+// PDF----- MO MOVER
+
 
 // ---------- SESIÓN ----------
 builder.Services.AddDistributedMemoryCache(); // almacén en memoria para sesiones

@@ -59,21 +59,6 @@
     ]
   },
   {
-    "Username": "omar",
-    "Total": 1998.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-23T15:05:41.7733742Z",
-    "Items": [
-      {
-        "Id": 2003,
-        "Name": "Gorra New Era NY",
-        "Price": 999.00,
-        "Qty": 2,
-        "Subtotal": 1998.00
-      }
-    ]
-  },
-  {
     "Username": "ivana",
     "Total": 1898.00,
     "Confirmed": true,
@@ -173,6 +158,35 @@
         "Price": 2499.00,
         "Qty": 1,
         "Subtotal": 2499.00
+      }
+    ]
+  },
+  {
+    "Username": "guest",
+    "Total": 4298.00,
+    "Confirmed": true,
+    "DateUtc": "2025-10-29T18:24:55.2227989Z",
+    "Items": [
+      {
+        "Id": 2004,
+        "Name": "Playera Gr\u00E1fica Anuel AA x Reebok",
+        "Price": 999.00,
+        "Qty": 1,
+        "Subtotal": 999.00
+      },
+      {
+        "Id": 2003,
+        "Name": "Gorra 31 Hats \u0022NY Flames\u0022",
+        "Price": 2000.00,
+        "Qty": 1,
+        "Subtotal": 2000.00
+      },
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00
       }
     ]
   }
