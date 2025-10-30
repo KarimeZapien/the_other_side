@@ -16,11 +16,8 @@ namespace TheOtherSide.Controllers
         {
             new CartItem { Id = 2001, Name = "New Balance 1000",                      Price = 3599.00m },
             new CartItem { Id = 2002, Name = "Cartera Guess",                          Price =  599.00m },
-
-            // Reemplazos solicitados
             new CartItem { Id = 2003, Name = "Gorra 31 Hats \"NY Flames\"",            Price = 2000.00m },
             new CartItem { Id = 2004, Name = "Playera Gráfica Anuel AA x Reebok",      Price =  999.00m },
-
             new CartItem { Id = 2005, Name = "Reloj Lacoste",                          Price = 2749.00m },
             new CartItem { Id = 2006, Name = "Perfume Acqua Di Gio",                   Price = 1999.00m },
             new CartItem { Id = 1001, Name = "Rhode Lip Treatment",                    Price =  499.00m },
@@ -64,8 +61,6 @@ namespace TheOtherSide.Controllers
             if (!System.IO.File.Exists(CartFilePath)) return new();
             var json = System.IO.File.ReadAllText(CartFilePath);
             var cart = JsonSerializer.Deserialize<List<CartItem>>(json) ?? new();
-
-            // >>> Sincroniza nombre/precio con el catálogo por Id (corrige datos viejos en cart.json)
             SyncCartWithCatalog(cart);
 
             return cart;
@@ -74,7 +69,6 @@ namespace TheOtherSide.Controllers
         // Actualiza los items del carrito con los datos vigentes del catálogo (por Id)
         private void SyncCartWithCatalog(List<CartItem> cart)
         {
-            // Si cambiamos más adelante otros productos, basta con tocar AvailableItems.
             foreach (var it in cart)
             {
                 var master = AvailableItems.FirstOrDefault(x => x.Id == it.Id);
@@ -120,7 +114,7 @@ namespace TheOtherSide.Controllers
         {
             var cart = LoadCart();
             var item = AvailableItems.Find(g => g.Id == id);
-            if (item != null) cart.Add(item); // permite varias unidades
+            if (item != null) cart.Add(item); // permite que agreguemos varios productos
             SaveCart(cart);
             return Redirect(Request.Headers["Referer"].ToString());
         }
@@ -129,21 +123,20 @@ namespace TheOtherSide.Controllers
         public IActionResult RemoveFromCart(int id)
         {
             var cart = LoadCart();
-            cart.RemoveAll(g => g.Id == id); // quita todas las unidades del product id
+            cart.RemoveAll(g => g.Id == id); // quita articulos del carrito
             SaveCart(cart);
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
         public IActionResult Confirmation()
         {
-            var saleVM = BuildCurrentSaleVM(); // username + items actuales del carrito
+            var saleVM = BuildCurrentSaleVM(); // username + items actuales del carrito o sea te muestra la compra sin confirmar
             return View(saleVM);
         }
 
         [HttpPost]
         public IActionResult ConfirmSale()
         {
-            // 1) Leemos carrito actual
             var cart = LoadCart();
             if (cart.Count == 0)
             {
@@ -151,7 +144,6 @@ namespace TheOtherSide.Controllers
                 return RedirectToAction("Confirmation");
             }
 
-            // 2) Agrupamos para obtener cantidades y subtotales (sin cambiar tu modelo de carrito)
             var lines = cart
                 .GroupBy(x => new { x.Id, x.Name, x.Price })
                 .Select(g => new SaleDetailLine
@@ -166,7 +158,6 @@ namespace TheOtherSide.Controllers
 
             var total = lines.Sum(x => x.Subtotal);
 
-            // 3) Cargamos historial existente, agregamos la nueva venta
             var log = LoadSalesLog();
 
             log.Add(new SaleEntry
@@ -193,7 +184,6 @@ namespace TheOtherSide.Controllers
                 .Where(s => s.Confirmed && string.Equals(s.Username, user, System.StringComparison.OrdinalIgnoreCase))
                 .OrderByDescending(s => s.DateUtc)
                 .ToList();
-
             return View(mine);
         }
 
@@ -241,7 +231,6 @@ namespace TheOtherSide.Controllers
 
             var total = lines.Sum(x => x.Subtotal);
 
-            // Guardar en historial (append en sale.json) 
             var log = LoadSalesLog();
             log.Add(new SaleEntry
             {
@@ -253,7 +242,6 @@ namespace TheOtherSide.Controllers
             });
             SaveSalesLog(log);
 
-            // Limpiar carrito
             SaveCart(new List<CartItem>());
 
             TempData["SuccessMessage"] = $"¡Pago realizado y pedido confirmado, {GetCurrentUsername()}! Total: ${total}";
