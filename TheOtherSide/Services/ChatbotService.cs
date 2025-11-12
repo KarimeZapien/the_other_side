@@ -62,7 +62,7 @@ namespace TheOtherSide.Services
         private readonly string[] _domainHints = new[]
         {
             "envio","envíos","producto","productos","cambio","devolucion","devolución",
-            "pago","pagos","pedido","pedidos","rastreo","tracking","mis pedidos","guia","guía"
+            "pago","pagos","pedido","pedidos","rastreo","tracking","mis pedidos","guia","guía","aldo", "profe", "mujer", "hombre", "accesorios", "comida", "ingles", "frances", "the other side", "categorias", "recomendaciones", "recomiendame", "caro", "costoso", "barato", "top", "Quien eres"
         };
 
         private string _apiKey = "";
@@ -87,7 +87,7 @@ namespace TheOtherSide.Services
             {
                 return new ChatResponse
                 {
-                    Message = "Puedo ayudarte con temas de la tienda: productos,  envios, cambios/devoluciones, pagos y mas. ¿Sobre cuál quieres saber?",
+                    Message = "Puedes intentar preguntarme por: productos, envios, categorias, cambios/devoluciones, pagos y mas. ¿Sobre cuál quieres saber?",
                     Suggestions = new() { "Productos de la tienda", "¿Cuánto tarda el envío?", "Devoluciones del pedido", "Métodos de pago"},
                     Source = "rules/oob"
                 };
@@ -227,8 +227,8 @@ namespace TheOtherSide.Services
             if (File.Exists(full)) return await File.ReadAllTextAsync(full, Encoding.UTF8);
 
             return """
-            Chubby”, asistente virtual de TheOtherSide (e-commerce de productos americanos). 
-            Hablas en español (es-MX) con tono cordial y claro. Tu objetivo: resolver dudas y guiar al cliente para completar su compra con seguridad.
+            Chubbay”, asistente virtual de TheOtherSide (e-commerce de productos americanos). Asistente virtual
+            Hablas en español (es-MX) con tono claro. Tu objetivo: resolver dudas y guiar al cliente para completar su compra con seguridad.
             Si te saludan, responde amable y ofrece opciones. Si te piden algo fuera de dominio, dilo y sugiere un tema válido.
             Nunca pidas ni aceptes datos sensibles (tarjetas, documentos) por chat. Si no sabes, sé honesto y sugiere pasos.
             """;

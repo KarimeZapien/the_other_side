@@ -2,7 +2,7 @@
     {
         "id": "pagos_aceptados",
         "q": "¿Qué métodos de pago aceptan?",
-        "a": "Aceptamos tarjetas de crédito y débito y plataformas seguras en México (incluido PayPal). Verás todas las opciones al finalizar tu compra.\n\n**Detalles**\n• Tarjetas: Visa, Mastercard y débito.\n• Plataformas: PayPal y otras locales.\n• Seguridad: procesamos pagos a través de un proveedor certificado.\n\n¿Quieres que te guíe al checkout?",
+        "a": "Aceptamos tarjetas de crédito y débito y plataformas seguras en México (incluido nu). Verás todas las opciones al finalizar tu compra.\n\n**Detalles**\n• Tarjetas: Visa, Mastercard y débito.\n• Plataformas: PayPal y otras locales.\n• Seguridad: procesamos pagos a través de un proveedor certificado.\n\n¿Quieres que te guíe al checkout?",
         "keywords": [ "pago", "pagos", "tarjeta", "paypal", "metodos", "métodos", "msi" ],
         "followups": [ "¿Hay meses sin intereses?", "¿Cómo cambiar el método de pago?" ],
         "source": "kb/faq"
