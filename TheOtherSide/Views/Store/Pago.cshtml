@@ -66,8 +66,16 @@ else
                 </div>
                 <div class="row g-3">
                     <div class="col">
-                        <label class="form-label">Vencimiento (MM/AA)</label>
-                        <input name="expiry" class="form-control" placeholder="08/28" required/>
+                        <label class="form-label">Vencimiento</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <input name="mm" class="form-control text-center"
+                                   placeholder="MM" inputmode="numeric"
+                                   type="number" min="1" max="12" required style="max-width:90px" />
+                            <span>/</span>
+                            <input name="yy" class="form-control text-center"
+                                   placeholder="AA" inputmode="numeric"
+                                   type="number" min="26" max="99" required style="max-width:90px" />
+                        </div>
                     </div>
                     <div class="col">
                         <label class="form-label">CVV</label>

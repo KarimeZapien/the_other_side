@@ -212,11 +212,21 @@ namespace TheOtherSide.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessPayment(string cardNumber, string expiry, string cvv)
+        public IActionResult ProcessPayment(string cardNumber, int mm, int yy, string cvv)
         {
-            if (string.IsNullOrWhiteSpace(cardNumber) || string.IsNullOrWhiteSpace(expiry) || string.IsNullOrWhiteSpace(cvv))
+            bool cardOk = !string.IsNullOrWhiteSpace(cardNumber)
+                  && cardNumber.All(char.IsDigit)
+                  && cardNumber.Length == 16;
+
+            bool mmOk = mm >= 1 && mm <= 12;  
+            bool yyOk = yy >= 26 && yy <= 99; 
+            bool cvvOk = !string.IsNullOrWhiteSpace(cvv)
+                         && cvv.All(char.IsDigit)
+                         && cvv.Length == 3;
+
+            if (!(cardOk && mmOk && yyOk && cvvOk))
             {
-                TempData["SuccessMessage"] = "Por favor completa los datos de pago.";
+                TempData["SuccessMessage"] = "Datos de pago inválidos. Tarjeta (16 dígitos), MM (1–12), AA (>=26) y CVV (3).";
                 return RedirectToAction("Pago");
             }
 

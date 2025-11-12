@@ -48,78 +48,6 @@
     ]
   },
   {
-    "Username": "omar",
-    "Total": 3599.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-23T14:46:11.4795128Z",
-    "Items": [
-      {
-        "Id": 2001,
-        "Name": "New Balance 1000",
-        "Price": 3599.00,
-        "Qty": 1,
-        "Subtotal": 3599.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "ivana",
-    "Total": 1898.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-23T17:18:30.2363748Z",
-    "Items": [
-      {
-        "Id": 2002,
-        "Name": "Cartera Guess",
-        "Price": 599.00,
-        "Qty": 1,
-        "Subtotal": 599.00,
-        "Size": null
-      },
-      {
-        "Id": 1002,
-        "Name": "Pleasing Boat Tote",
-        "Price": 1299.00,
-        "Qty": 1,
-        "Subtotal": 1299.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "ivana",
-    "Total": 3417.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-23T18:56:21.6231534Z",
-    "Items": [
-      {
-        "Id": 3002,
-        "Name": "Reeses Halloween Edition",
-        "Price": 219.00,
-        "Qty": 1,
-        "Subtotal": 219.00,
-        "Size": null
-      },
-      {
-        "Id": 1003,
-        "Name": "28 Colour Denim Jacket Ecru",
-        "Price": 2499.00,
-        "Qty": 1,
-        "Subtotal": 2499.00,
-        "Size": null
-      },
-      {
-        "Id": 1005,
-        "Name": "Kit Rare Beauty x Taj\u00EDn",
-        "Price": 699.00,
-        "Qty": 1,
-        "Subtotal": 699.00,
-        "Size": null
-      }
-    ]
-  },
-  {
     "Username": "admin",
     "Total": 499.00,
     "Confirmed": true,
@@ -131,78 +59,6 @@
         "Price": 499.00,
         "Qty": 1,
         "Subtotal": 499.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "guest",
-    "Total": 3599.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-24T00:20:09.8309863Z",
-    "Items": [
-      {
-        "Id": 2001,
-        "Name": "New Balance 1000",
-        "Price": 3599.00,
-        "Qty": 1,
-        "Subtotal": 3599.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "guest",
-    "Total": 2998.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-24T01:21:36.2348779Z",
-    "Items": [
-      {
-        "Id": 1001,
-        "Name": "Rhode Lip Treatment",
-        "Price": 499.00,
-        "Qty": 1,
-        "Subtotal": 499.00,
-        "Size": null
-      },
-      {
-        "Id": 1003,
-        "Name": "28 Colour Denim Jacket Ecru",
-        "Price": 2499.00,
-        "Qty": 1,
-        "Subtotal": 2499.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "guest",
-    "Total": 4298.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-29T18:24:55.2227989Z",
-    "Items": [
-      {
-        "Id": 2004,
-        "Name": "Playera Gr\u00E1fica Anuel AA x Reebok",
-        "Price": 999.00,
-        "Qty": 1,
-        "Subtotal": 999.00,
-        "Size": null
-      },
-      {
-        "Id": 2003,
-        "Name": "Gorra 31 Hats \u0022NY Flames\u0022",
-        "Price": 2000.00,
-        "Qty": 1,
-        "Subtotal": 2000.00,
-        "Size": null
-      },
-      {
-        "Id": 1002,
-        "Name": "Pleasing Boat Tote",
-        "Price": 1299.00,
-        "Qty": 1,
-        "Subtotal": 1299.00,
         "Size": null
       }
     ]
@@ -224,62 +80,6 @@
     ]
   },
   {
-    "Username": "karime",
-    "Total": 4297.00,
-    "Confirmed": true,
-    "DateUtc": "2025-10-30T00:09:17.6688191Z",
-    "Items": [
-      {
-        "Id": 1003,
-        "Name": "28 Colour Denim Jacket Ecru",
-        "Price": 2499.00,
-        "Qty": 1,
-        "Subtotal": 2499.00,
-        "Size": null
-      },
-      {
-        "Id": 1001,
-        "Name": "Rhode Lip Treatment",
-        "Price": 499.00,
-        "Qty": 1,
-        "Subtotal": 499.00,
-        "Size": null
-      },
-      {
-        "Id": 1002,
-        "Name": "Pleasing Boat Tote",
-        "Price": 1299.00,
-        "Qty": 1,
-        "Subtotal": 1299.00,
-        "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "guest",
-    "Total": 1518.00,
-    "Confirmed": true,
-    "DateUtc": "2025-11-12T00:12:40.3151245Z",
-    "Items": [
-      {
-        "Id": 4005,
-        "Name": "Crayola SuperTips 50 pz",
-        "Price": 219.00,
-        "Qty": 1,
-        "Subtotal": 219.00,
-        "Size": null
-      },
-      {
-        "Id": 1002,
-        "Name": "Pleasing Boat Tote",
-        "Price": 1299.00,
-        "Qty": 1,
-        "Subtotal": 1299.00,
-        "Size": null
-      }
-    ]
-  },
-  {
     "Username": "ivana",
     "Total": 179.00,
     "Confirmed": true,
@@ -292,22 +92,6 @@
         "Qty": 1,
         "Subtotal": 179.00,
         "Size": null
-      }
-    ]
-  },
-  {
-    "Username": "ivana",
-    "Total": 1299.00,
-    "Confirmed": true,
-    "DateUtc": "2025-11-12T13:55:48.2266458Z",
-    "Items": [
-      {
-        "Id": 1002,
-        "Name": "Pleasing Boat Tote",
-        "Price": 1299.00,
-        "Qty": 1,
-        "Subtotal": 1299.00,
-        "Size": "\u00DAnica"
       }
     ]
   },
@@ -419,6 +203,62 @@
         "Price": 1938.00,
         "Qty": 1,
         "Subtotal": 1938.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 1198.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T18:06:33.5527874Z",
+    "Items": [
+      {
+        "Id": 2002,
+        "Name": "Cartera Guess",
+        "Price": 599.00,
+        "Qty": 2,
+        "Subtotal": 1198.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 1137.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T19:52:05.8285735Z",
+    "Items": [
+      {
+        "Id": 4005,
+        "Name": "Crayola SuperTips 50 pz",
+        "Price": 219.00,
+        "Qty": 2,
+        "Subtotal": 438.00,
+        "Size": "\u00DAnica"
+      },
+      {
+        "Id": 1006,
+        "Name": "Starlet Lustrous Liquid Eyeshadow",
+        "Price": 699.00,
+        "Qty": 1,
+        "Subtotal": 699.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "guest",
+    "Total": 1299.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T19:56:30.0421764Z",
+    "Items": [
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00,
         "Size": "\u00DAnica"
       }
     ]
