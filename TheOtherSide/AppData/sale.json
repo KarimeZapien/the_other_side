@@ -262,5 +262,69 @@
         "Size": "\u00DAnica"
       }
     ]
+  },
+  {
+    "Username": "brandon",
+    "Total": 3599.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T21:23:55.1198626Z",
+    "Items": [
+      {
+        "Id": 2001,
+        "Name": "New Balance 1000",
+        "Price": 3599.00,
+        "Qty": 1,
+        "Subtotal": 3599.00,
+        "Size": "27"
+      }
+    ]
+  },
+  {
+    "Username": "brandon",
+    "Total": 2048.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T21:26:51.7364202Z",
+    "Items": [
+      {
+        "Id": 4002,
+        "Name": "Owala 32 oz Deep Black",
+        "Price": 749.00,
+        "Qty": 1,
+        "Subtotal": 749.00,
+        "Size": "\u00DAnica"
+      },
+      {
+        "Id": 4003,
+        "Name": "Coleman Hielera 60QT",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 458.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T22:49:33.128487Z",
+    "Items": [
+      {
+        "Id": 4005,
+        "Name": "Crayola SuperTips 50 pz",
+        "Price": 219.00,
+        "Qty": 1,
+        "Subtotal": 219.00,
+        "Size": "\u00DAnica"
+      },
+      {
+        "Id": 4006,
+        "Name": "Hair, Skin \u0026 Nails Gummies",
+        "Price": 239.00,
+        "Qty": 1,
+        "Subtotal": 239.00,
+        "Size": "\u00DAnica"
+      }
+    ]
   }
 ]

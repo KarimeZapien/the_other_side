@@ -49,7 +49,7 @@ namespace TheOtherSide.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewBag.ErrorMessage = "Usuario o contrase�a inv�lidos.";
+            ViewBag.ErrorMessage = "Usuario o contraseña inválidos.";
             return View();
         }
 
@@ -62,26 +62,26 @@ namespace TheOtherSide.Controllers
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) //por si los dejan en blanco
             {
-                ViewBag.ErrorMessage = "El usuario y/o contrase�a son obligatorios.";
+                ViewBag.ErrorMessage = "El usuario y/o contraseña son obligatorios.";
                 return View();
             }
             if (password != confirm) //por si no coinciden
             {
-                ViewBag.ErrorMessage = "Las contrase�as no coinciden.";
+                ViewBag.ErrorMessage = "Las contraseñas no coinciden.";
                 return View();
             }
 
             var users = LoadUsers();
             if (users.Exists(u => u.Username == username)) //si ya existe el usuario
             {
-                ViewBag.ErrorMessage = "Este usuario ya est� registrado.";
+                ViewBag.ErrorMessage = "Este usuario ya está registrado.";
                 return View();
             }
 
             users.Add(new User { Username = username, Password = password });
             SaveUsers(users);
 
-            ViewBag.SuccessMessage = "Se cre� el usuario. Puede iniciar sesi�n.";
+            ViewBag.SuccessMessage = "Se creó el usuario. Puede iniciar sesión.";
             return View(); 
         }
 

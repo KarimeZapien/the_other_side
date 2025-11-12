@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using System.Text.Json;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using TheOtherSide.Models;
 using TheOtherSide.Services;
-using Microsoft.AspNetCore.Http;
+using static QuestPDF.Helpers.Colors;
 
 namespace TheOtherSide.Controllers
 {
@@ -152,39 +153,9 @@ namespace TheOtherSide.Controllers
                 TempData["SuccessMessage"] = "Tu carrito está vacío.";
                 return RedirectToAction("Confirmation");
             }
-
-            var lines = cart
-                .GroupBy(x => new { x.Id, x.Name, x.Price , Size = x.Size ?? "Única"})
-                .Select(g => new SaleDetailLine
-                {
-                    Id = g.Key.Id,
-                    Name = g.Key.Name,
-                    Price = g.Key.Price,
-                    Size=g.Key.Size,
-                    Qty = g.Count(),
-                    Subtotal = g.Sum(i => i.Price)
-                })
-                .ToList();
-
-            var total = lines.Sum(x => x.Subtotal);
-
-            var log = LoadSalesLog();
-
-            log.Add(new SaleEntry
-            {
-                Username = GetCurrentUsername(),
-                Total = total,
-                Confirmed = true,
-                DateUtc = System.DateTime.UtcNow,
-                Items = lines
-            });
-
-            SaveSalesLog(log);             // guarda/acumula TODAS las ventas
-            SaveCart(new List<CartItem>()); // limpia carrito
-
-            TempData["SuccessMessage"] = $"¡Compra confirmada con éxito, {GetCurrentUsername()}! Total: ${total}";
-            return RedirectToAction("Confirmation");
+            return RedirectToAction("Pago");
         }
+
 
         public IActionResult MyOrders()
         {
@@ -209,6 +180,20 @@ namespace TheOtherSide.Controllers
             var bytes = _pdf.Build(mine, user);
             var fileName = $"MisPedidos_{user}_{System.DateTime.Now:yyyyMMdd_HHmm}.pdf";
             return File(bytes, "application/pdf", fileName);
+        }
+
+        [HttpGet]
+        public IActionResult Pago()
+        {
+            var cart = LoadCart();
+            if (cart.Count == 0)
+            {
+                TempData["SuccessMessage"] = "Tu carrito está vacío.";
+                return RedirectToAction("Confirmation");
+            }
+
+            var saleVM = BuildCurrentSaleVM();
+            return View(saleVM);
         }
 
         [HttpPost]
@@ -275,20 +260,6 @@ namespace TheOtherSide.Controllers
         {
             var saleVM = BuildCurrentSaleVM();
             return PartialView("~/Views/Shared/_CartBody.cshtml", saleVM);
-        }
-
-        [HttpGet]
-        public IActionResult Pago()
-        {
-            var cart = LoadCart();
-            if (cart.Count == 0)
-            {
-                TempData["SuccessMessage"] = "Tu carrito está vacío.";
-                return RedirectToAction("Confirmation");
-            }
-
-            var saleVM = BuildCurrentSaleVM();
-            return View(saleVM);
         }
     }
 }

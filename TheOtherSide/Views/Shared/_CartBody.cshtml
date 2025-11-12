@@ -1,41 +1,4 @@
-﻿@* @model TheOtherSide.Models.Sale
-@{
-    var items = Model?.Cart ?? new List<TheOtherSide.Models.CartItem>();
-}
-@if (items.Count == 0)
-{
-    <p>Sin artículos en el carrito.</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr><th>Articulo</th><th>Precio</th><th>Talla</th></tr>
-        </thead>
-        <tbody>
-            @foreach (var articulo in items)
-            {
-                <tr>
-                    <td>@articulo.Name</td>
-                    <td>$@articulo.Price</td>
-                    <td>@(articulo.Size ?? "Única")</td>
-                    <td class="text-end">
-                        <form asp-controller="Store" asp-action="RemoveFromCart" method="post" style="display:inline;">
-                            <input type="hidden" name="id" value="@articulo.Id" />
-                            <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <a asp-controller="Store" asp-action="Confirmation" class="btn btn-primary w-100">
-        Confirmar pedido
-    </a>
-
-}
- *@
+﻿
 @model TheOtherSide.Models.Sale
 @using System.Linq
 @{
