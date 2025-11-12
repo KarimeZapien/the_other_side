@@ -10,21 +10,24 @@
         "Name": "Stanley 30 oz Lila",
         "Price": 879.00,
         "Qty": 1,
-        "Subtotal": 879.00
+        "Subtotal": 879.00,
+        "Size": null
       },
       {
         "Id": 4003,
         "Name": "Coleman Hielera 60QT",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
       },
       {
         "Id": 1002,
         "Name": "Pleasing Boat Tote",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
       }
     ]
   },
@@ -39,7 +42,8 @@
         "Name": "Cheetos Flaming Hot",
         "Price": 179.00,
         "Qty": 1,
-        "Subtotal": 179.00
+        "Subtotal": 179.00,
+        "Size": null
       }
     ]
   },
@@ -54,7 +58,8 @@
         "Name": "New Balance 1000",
         "Price": 3599.00,
         "Qty": 1,
-        "Subtotal": 3599.00
+        "Subtotal": 3599.00,
+        "Size": null
       }
     ]
   },
@@ -69,14 +74,16 @@
         "Name": "Cartera Guess",
         "Price": 599.00,
         "Qty": 1,
-        "Subtotal": 599.00
+        "Subtotal": 599.00,
+        "Size": null
       },
       {
         "Id": 1002,
         "Name": "Pleasing Boat Tote",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
       }
     ]
   },
@@ -91,21 +98,24 @@
         "Name": "Reeses Halloween Edition",
         "Price": 219.00,
         "Qty": 1,
-        "Subtotal": 219.00
+        "Subtotal": 219.00,
+        "Size": null
       },
       {
         "Id": 1003,
         "Name": "28 Colour Denim Jacket Ecru",
         "Price": 2499.00,
         "Qty": 1,
-        "Subtotal": 2499.00
+        "Subtotal": 2499.00,
+        "Size": null
       },
       {
         "Id": 1005,
         "Name": "Kit Rare Beauty x Taj\u00EDn",
         "Price": 699.00,
         "Qty": 1,
-        "Subtotal": 699.00
+        "Subtotal": 699.00,
+        "Size": null
       }
     ]
   },
@@ -120,7 +130,8 @@
         "Name": "Rhode Lip Treatment",
         "Price": 499.00,
         "Qty": 1,
-        "Subtotal": 499.00
+        "Subtotal": 499.00,
+        "Size": null
       }
     ]
   },
@@ -135,7 +146,8 @@
         "Name": "New Balance 1000",
         "Price": 3599.00,
         "Qty": 1,
-        "Subtotal": 3599.00
+        "Subtotal": 3599.00,
+        "Size": null
       }
     ]
   },
@@ -150,14 +162,16 @@
         "Name": "Rhode Lip Treatment",
         "Price": 499.00,
         "Qty": 1,
-        "Subtotal": 499.00
+        "Subtotal": 499.00,
+        "Size": null
       },
       {
         "Id": 1003,
         "Name": "28 Colour Denim Jacket Ecru",
         "Price": 2499.00,
         "Qty": 1,
-        "Subtotal": 2499.00
+        "Subtotal": 2499.00,
+        "Size": null
       }
     ]
   },
@@ -172,21 +186,24 @@
         "Name": "Playera Gr\u00E1fica Anuel AA x Reebok",
         "Price": 999.00,
         "Qty": 1,
-        "Subtotal": 999.00
+        "Subtotal": 999.00,
+        "Size": null
       },
       {
         "Id": 2003,
         "Name": "Gorra 31 Hats \u0022NY Flames\u0022",
         "Price": 2000.00,
         "Qty": 1,
-        "Subtotal": 2000.00
+        "Subtotal": 2000.00,
+        "Size": null
       },
       {
         "Id": 1002,
         "Name": "Pleasing Boat Tote",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
       }
     ]
   },
@@ -201,7 +218,8 @@
         "Name": "Stanley 30 oz Lila",
         "Price": 879.00,
         "Qty": 1,
-        "Subtotal": 879.00
+        "Subtotal": 879.00,
+        "Size": null
       }
     ]
   },
@@ -216,21 +234,24 @@
         "Name": "28 Colour Denim Jacket Ecru",
         "Price": 2499.00,
         "Qty": 1,
-        "Subtotal": 2499.00
+        "Subtotal": 2499.00,
+        "Size": null
       },
       {
         "Id": 1001,
         "Name": "Rhode Lip Treatment",
         "Price": 499.00,
         "Qty": 1,
-        "Subtotal": 499.00
+        "Subtotal": 499.00,
+        "Size": null
       },
       {
         "Id": 1002,
         "Name": "Pleasing Boat Tote",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
       }
     ]
   },
@@ -245,14 +266,160 @@
         "Name": "Crayola SuperTips 50 pz",
         "Price": 219.00,
         "Qty": 1,
-        "Subtotal": 219.00
+        "Subtotal": 219.00,
+        "Size": null
       },
       {
         "Id": 1002,
         "Name": "Pleasing Boat Tote",
         "Price": 1299.00,
         "Qty": 1,
-        "Subtotal": 1299.00
+        "Subtotal": 1299.00,
+        "Size": null
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 179.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T13:14:25.8648121Z",
+    "Items": [
+      {
+        "Id": 3003,
+        "Name": "Cheetos Flaming Hot",
+        "Price": 179.00,
+        "Qty": 1,
+        "Subtotal": 179.00,
+        "Size": null
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 1299.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T13:55:48.2266458Z",
+    "Items": [
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 3599.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:03:21.3850352Z",
+    "Items": [
+      {
+        "Id": 2001,
+        "Name": "New Balance 1000",
+        "Price": 3599.00,
+        "Qty": 1,
+        "Subtotal": 3599.00,
+        "Size": "26"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 4098.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:11:30.5029393Z",
+    "Items": [
+      {
+        "Id": 2001,
+        "Name": "New Balance 1000",
+        "Price": 3599.00,
+        "Qty": 1,
+        "Subtotal": 3599.00,
+        "Size": "27"
+      },
+      {
+        "Id": 1001,
+        "Name": "Rhode Lip Treatment",
+        "Price": 499.00,
+        "Qty": 1,
+        "Subtotal": 499.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 3798.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:17:12.3824261Z",
+    "Items": [
+      {
+        "Id": 1003,
+        "Name": "28 Colour Denim Jacket Ecru",
+        "Price": 2499.00,
+        "Qty": 1,
+        "Subtotal": 2499.00,
+        "Size": "M"
+      },
+      {
+        "Id": 1002,
+        "Name": "Pleasing Boat Tote",
+        "Price": 1299.00,
+        "Qty": 1,
+        "Subtotal": 1299.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 999.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:20:40.1752472Z",
+    "Items": [
+      {
+        "Id": 2004,
+        "Name": "Playera Gr\u00E1fica Anuel AA x Reebok",
+        "Price": 999.00,
+        "Qty": 1,
+        "Subtotal": 999.00,
+        "Size": "L"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 2499.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:22:50.9412143Z",
+    "Items": [
+      {
+        "Id": 1003,
+        "Name": "28 Colour Denim Jacket Ecru",
+        "Price": 2499.00,
+        "Qty": 1,
+        "Subtotal": 2499.00,
+        "Size": "M"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 1938.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-12T14:23:22.9226622Z",
+    "Items": [
+      {
+        "Id": 1004,
+        "Name": "Perfume Cloud 100 mL",
+        "Price": 1938.00,
+        "Qty": 1,
+        "Subtotal": 1938.00,
+        "Size": "\u00DAnica"
       }
     ]
   }

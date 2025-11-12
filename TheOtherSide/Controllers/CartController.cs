@@ -110,20 +110,29 @@ namespace TheOtherSide.Controllers
             => new Sale { Username = GetCurrentUsername(), Cart = LoadCart(), Confirmed = false };
 
         [HttpPost]
-        public IActionResult AddToCart(int id)
+        public IActionResult AddToCart(int id, string? size)
         {
             var cart = LoadCart();
             var item = AvailableItems.Find(g => g.Id == id);
-            if (item != null) cart.Add(item); // permite que agreguemos varios productos
+            if (item != null)
+            {
+                cart.Add(new CartItem
+                {
+                    Id= item.Id, Name=item.Name, Price= item.Price,
+                    Size=string.IsNullOrWhiteSpace(size) ? "Única":size
+                });
+
+            } // permite que agreguemos varios productos
             SaveCart(cart);
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
         [HttpPost]
-        public IActionResult RemoveFromCart(int id)
+        public IActionResult RemoveFromCart(int id, string? size)
         {
             var cart = LoadCart();
-            cart.RemoveAll(g => g.Id == id); // quita articulos del carrito
+            var keySize = string.IsNullOrWhiteSpace(size) ? "Única" : size;
+            cart.RemoveAll(g => g.Id == id && (g.Size ?? "Única") == keySize);
             SaveCart(cart);
             return Redirect(Request.Headers["Referer"].ToString());
         }
@@ -145,12 +154,13 @@ namespace TheOtherSide.Controllers
             }
 
             var lines = cart
-                .GroupBy(x => new { x.Id, x.Name, x.Price })
+                .GroupBy(x => new { x.Id, x.Name, x.Price , Size = x.Size ?? "Única"})
                 .Select(g => new SaleDetailLine
                 {
                     Id = g.Key.Id,
                     Name = g.Key.Name,
                     Price = g.Key.Price,
+                    Size=g.Key.Size,
                     Qty = g.Count(),
                     Subtotal = g.Sum(i => i.Price)
                 })
@@ -218,12 +228,13 @@ namespace TheOtherSide.Controllers
             }
 
             var lines = cart
-                .GroupBy(x => new { x.Id, x.Name, x.Price })
+                .GroupBy(x => new { x.Id, x.Name, x.Price , Size =x.Size ?? "Única"})
                 .Select(g => new SaleDetailLine
                 {
                     Id = g.Key.Id,
                     Name = g.Key.Name,
                     Price = g.Key.Price,
+                    Size = g.Key.Size,
                     Qty = g.Count(),
                     Subtotal = g.Sum(i => i.Price)
                 })

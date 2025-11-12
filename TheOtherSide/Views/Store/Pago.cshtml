@@ -4,8 +4,8 @@
 @{
     ViewData["Title"] = "Pago";
     var grupos = Model.Cart
-        .GroupBy(x => new { x.Id, x.Name, x.Price })
-        .Select(g => new { g.Key.Id, g.Key.Name, g.Key.Price, Qty = g.Count(), Subtotal = g.Sum(i => i.Price) })
+        .GroupBy(x => new { x.Id, x.Name, x.Price, Size=x.Size ?? "Única" })
+        .Select(g => new { g.Key.Id, g.Key.Name, g.Key.Price, g.Key.Size, Qty = g.Count(), Subtotal = g.Sum(i => i.Price) })
         .ToList();
     var total = grupos.Sum(x => x.Subtotal);
 }
@@ -30,6 +30,7 @@ else
                 <thead>
                     <tr>
                         <th>Producto</th>
+                        <th style="width:110px">Talla</th>
                         <th class="text-center">Cantidad</th>
                         <th class="text-end">Precio</th>
                         <th class="text-end">Subtotal</th>
@@ -40,6 +41,7 @@ else
                     {
                         <tr>
                             <td>@it.Name</td>
+                            <td>@it.Size</td>
                             <td class="text-center">@it.Qty</td>
                             <td class="text-end">$@it.Price</td>
                             <td class="text-end">$@it.Subtotal</td>

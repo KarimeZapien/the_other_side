@@ -7,6 +7,8 @@
         public decimal Price { get; set; }
         public int Qty { get; set; }
         public decimal Subtotal { get; set; }
+
+        public string? Size { get; set; }
     }
 
     public class SaleEntry

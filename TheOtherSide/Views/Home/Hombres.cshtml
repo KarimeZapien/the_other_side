@@ -114,6 +114,7 @@
         <div class="modal-content p-3">
             <div class="row g-4 align-items-center">
 
+                <!-- Carrusel -->
                 <div class="col-md-6">
                     <div id="carouselNB_h" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -141,30 +142,36 @@
                     <p class="text-muted">Tenis deportivo casual, lo último en tendencias.</p>
                     <p class="fs-3 fw-bold text-success">$3,599.00</p>
 
-                    <div class="mb-3">
-                        <label for="tallaNB" class="form-label">Selecciona tu talla:</label>
-                        <select class="form-select" id="tallaNB">
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                        </select>
-                    </div>
-
-                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="mt-2">
                         <input type="hidden" name="id" value="2001" />
-                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
-                    </form>
 
+                        <div class="mb-3">
+                            <label for="tallaNB" class="form-label">Selecciona tu talla:</label>
+                            <select class="form-select" id="tallaNB" name="size" required>
+                                <option value="" selected disabled>Elige tu talla</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                        </div>
+                    </form>
                 </div>
+
             </div>
+
             <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Modal: Cartera Guess -->
 <div class="modal fade" id="Guess_Ventana" tabindex="-1" aria-labelledby="GuessLabel" aria-hidden="true">
@@ -292,21 +299,22 @@
                     <p class="text-muted">Diseño simple con la frase icónica del artista. Corte cómodo para el diario.</p>
                     <p class="fs-3 fw-bold text-success">$999.00</p>
 
-                    <!-- Selector de talla -->
-                    <div class="mb-3">
-                        <label for="tallaAnuel" class="form-label">Selecciona tu talla:</label>
-                        <select class="form-select" id="tallaAnuel" name="size">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                        </select>
-                    </div>
-
-                    <!-- Agregar al carrito -->
-                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-flex gap-2 mt-2">
+                    <form asp-controller="Store" asp-action="AddToCart" method="post" class="mt-2">
                         <input type="hidden" name="id" value="2004" />
-                        <!-- Si tu backend lee la talla desde el form, este name="size" ya la manda -->
-                        <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+
+                        <div class="mb-3">
+                            <label for="tallaAnuel" class="form-label">Selecciona tu talla:</label>
+                            <select class="form-select" id="tallaAnuel" name="size" required>
+                                <option value="" selected disabled>Elige tu talla</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-outline-primary flex-fill">Agregar al carrito</button>
+                        </div>
                     </form>
                 </div>
 

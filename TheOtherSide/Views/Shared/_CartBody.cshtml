@@ -1,4 +1,4 @@
-﻿@model TheOtherSide.Models.Sale
+﻿@* @model TheOtherSide.Models.Sale
 @{
     var items = Model?.Cart ?? new List<TheOtherSide.Models.CartItem>();
 }
@@ -10,7 +10,7 @@ else
 {
     <table class="table">
         <thead>
-            <tr><th>Articulo</th><th>Precio</th><th></th></tr>
+            <tr><th>Articulo</th><th>Precio</th><th>Talla</th></tr>
         </thead>
         <tbody>
             @foreach (var articulo in items)
@@ -18,6 +18,7 @@ else
                 <tr>
                     <td>@articulo.Name</td>
                     <td>$@articulo.Price</td>
+                    <td>@(articulo.Size ?? "Única")</td>
                     <td class="text-end">
                         <form asp-controller="Store" asp-action="RemoveFromCart" method="post" style="display:inline;">
                             <input type="hidden" name="id" value="@articulo.Id" />
@@ -33,5 +34,69 @@ else
         Confirmar pedido
     </a>
 
+}
+ *@
+@model TheOtherSide.Models.Sale
+@using System.Linq
+@{
+    var items = Model?.Cart ?? new List<TheOtherSide.Models.CartItem>();
+    var grupos = items
+        .GroupBy(x => new { x.Id, x.Name, x.Price, Size = x.Size ?? "Única" })
+        .Select(g => new { g.Key.Id, g.Key.Name, g.Key.Price, g.Key.Size, Qty = g.Count(), Subtotal = g.Sum(i => i.Price) })
+        .ToList();
+    var total = grupos.Sum(x => x.Subtotal);
+}
+
+@if (!items.Any())
+{
+    <p>Sin artículos en el carrito.</p>
+}
+else
+{
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th>Artículo</th>
+                <th style="width:110px">Talla</th>
+                <th class="text-center" style="width:90px">Cant.</th>
+                <th class="text-end" style="width:120px">Precio</th>
+                <th class="text-end" style="width:130px">Subtotal</th>
+                <th class="text-end" style="width:170px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var it in grupos)
+            {
+                <tr>
+                    <td>@it.Name</td>
+                    <td>@it.Size</td>
+                    <td class="text-center">@it.Qty</td>
+                    <td class="text-end">$@it.Price</td>
+                    <td class="text-end">$@it.Subtotal</td>
+                    <td class="text-end">
+                        <form asp-controller="Store" asp-action="AddToCart" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@it.Id" />
+                            <input type="hidden" name="size" value="@it.Size" />
+                            <button type="submit" class="btn btn-sm btn-outline-primary">+1</button>
+                        </form>
+                        <form asp-controller="Store" asp-action="RemoveFromCart" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@it.Id" />
+                            <input type="hidden" name="size" value="@it.Size" />
+                            <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr class="fw-bold">
+                <td colspan="4" class="text-end">Total</td>
+                <td class="text-end">$@total</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <a asp-controller="Store" asp-action="Confirmation" class="btn btn-primary w-100">Confirmar pedido</a>
 }
 

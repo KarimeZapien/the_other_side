@@ -44,6 +44,7 @@ else
                             <tr>
                                 <th>Producto</th>
                                 <th class="text-center" style="width:110px">Cantidad</th>
+                                <th style="width:100px">Talla</th>
                                 <th class="text-end" style="width:120px">Precio</th>
                                 <th class="text-end" style="width:130px">Subtotal</th>
                             </tr>
@@ -54,6 +55,7 @@ else
                                 <tr>
                                     <td>@it.Name</td>
                                     <td class="text-center">@it.Qty</td>
+                                    <td>@(it.Size ?? "Única")</td>
                                     <td class="text-end">$@it.Price</td>
                                     <td class="text-end">$@it.Subtotal</td>
                                 </tr>
