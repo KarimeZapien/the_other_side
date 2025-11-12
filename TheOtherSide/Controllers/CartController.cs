@@ -55,7 +55,7 @@ namespace TheOtherSide.Controllers
                    ?? "guest";
         }
 
-        // ----- CART (items) -----
+        // ----- CARRITO -----
         private List<CartItem> LoadCart()
         {
             if (!System.IO.File.Exists(CartFilePath)) return new();
@@ -66,7 +66,6 @@ namespace TheOtherSide.Controllers
             return cart;
         }
 
-        // Actualiza los items del carrito con los datos vigentes del catálogo (por Id)
         private void SyncCartWithCatalog(List<CartItem> cart)
         {
             foreach (var it in cart)
@@ -109,6 +108,7 @@ namespace TheOtherSide.Controllers
         private Sale BuildCurrentSaleVM()
             => new Sale { Username = GetCurrentUsername(), Cart = LoadCart(), Confirmed = false };
 
+        // TODAS LAS ACCIONES DEL CARRITO
         [HttpPost]
         public IActionResult AddToCart(int id, string? size)
         {
