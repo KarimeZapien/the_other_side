@@ -326,5 +326,45 @@
         "Size": "\u00DAnica"
       }
     ]
+  },
+  {
+    "Username": "guest",
+    "Total": 1398.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-13T00:35:47.4784652Z",
+    "Items": [
+      {
+        "Id": 1005,
+        "Name": "Kit Rare Beauty x Taj\u00EDn",
+        "Price": 699.00,
+        "Qty": 1,
+        "Subtotal": 699.00,
+        "Size": "\u00DAnica"
+      },
+      {
+        "Id": 1006,
+        "Name": "Starlet Lustrous Liquid Eyeshadow",
+        "Price": 699.00,
+        "Qty": 1,
+        "Subtotal": 699.00,
+        "Size": "\u00DAnica"
+      }
+    ]
+  },
+  {
+    "Username": "ivana",
+    "Total": 499.00,
+    "Confirmed": true,
+    "DateUtc": "2025-11-13T00:50:32.4918244Z",
+    "Items": [
+      {
+        "Id": 1001,
+        "Name": "Rhode Lip Treatment",
+        "Price": 499.00,
+        "Qty": 1,
+        "Subtotal": 499.00,
+        "Size": "\u00DAnica"
+      }
+    ]
   }
 ]

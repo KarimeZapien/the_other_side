@@ -203,15 +203,16 @@ namespace TheOtherSide.Controllers
                   && cardNumber.All(char.IsDigit)
                   && cardNumber.Length == 16;
 
-            bool mmOk = mm >= 1 && mm <= 12;  
-            bool yyOk = yy >= 26 && yy <= 99; 
+            bool mmOk = mm >= 1 && mm <= 12;
+            bool yyOk = yy >= 26 && yy <= 99;
+            bool mmYYok= (mm == 12 && (yy >= 25 && yy <= 99));
             bool cvvOk = !string.IsNullOrWhiteSpace(cvv)
                          && cvv.All(char.IsDigit)
                          && cvv.Length == 3;
 
-            if (!(cardOk && mmOk && yyOk && cvvOk))
+            if (!((cardOk && mmOk && yyOk && cvvOk) || (cardOk && mmYYok & cvvOk)))
             {
-                TempData["SuccessMessage"] = "Datos de pago inválidos. Tarjeta (16 dígitos), MM (1–12), AA (>=26) y CVV (3).";
+                TempData["SuccessMessage"] = "Datos de pago inválidos. Tarjeta (16 dígitos), MM/AA y CVV (3).";
                 return RedirectToAction("Pago");
             }
 
